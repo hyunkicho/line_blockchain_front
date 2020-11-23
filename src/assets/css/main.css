@@ -24,3 +24,10 @@
     text-align:left;
     margin-bottom: 10px;
 }
+.login .el-input {
+    background-color: white;
+  }
+.login .el-input--suffix .el-input__inner {
+    border-radius: 50px;
+    border: solid 1px #167af9;
+  }
