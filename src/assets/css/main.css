@@ -1,5 +1,6 @@
 .main-wrap {
     padding-top:50px;
+    padding-bottom:50px;
 }
 
 .wrap-margin { 
@@ -14,7 +15,7 @@
 }
 
 .wrap-slide {display: flex; overflow-x:scroll; overflow-y:hidden; text-align:left;}
-.wrap-slide figure{width:100%; margin-right:10px;}
+.wrap-slide figure{ margin-right:10px;}
 .wrap-slide img{width:230px}
 .wrap-slide figcaption dt{font-size:14px; color:#747f89; margin:10px 0px 15px 0px}
 .wrap-slide figcaption dd:nth-child(2){font-size:16px; height: 50px;}

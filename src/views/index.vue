@@ -69,7 +69,46 @@
       <p>인기상품</p>
 
       <div class="wrap-slide">
-        
+        <figure>
+          <img src="../assets/resources/main3_product1.png">
+          <figcaption>
+            <dl>
+              <dt>Jordan</dt>
+              <dd>Air Jordan 1 Retro High OG Turbo Green</dd>
+              <dd>410,000원</dd>
+            </dl>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/resources/main3_product2.png">
+          <figcaption>
+            <dl>
+              <dt>Jordan</dt>
+              <dd>Air Jordan 1 Retro High OG Turbo Green</dd>
+              <dd>410,000원</dd>
+            </dl>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/resources/main3_product1.png">
+          <figcaption>
+            <dl>
+              <dt>Jordan</dt>
+              <dd>Air Jordan 1 Retro High OG Turbo Green</dd>
+              <dd>410,000원</dd>
+            </dl>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/resources/main3_product2.png">
+          <figcaption>
+            <dl>
+              <dt>Jordan</dt>
+              <dd>Air Jordan 1 Retro High OG Turbo Green</dd>
+              <dd>410,000원</dd>
+            </dl>
+          </figcaption>
+        </figure>
       </div>
 
     </div>
