@@ -9,7 +9,7 @@
 
     <v-row :gutter="10">
         <v-col :span="24">
-        <p :class="{focusOn : focusid}">아이디</p>
+        <p :class="{focusOn : focusid}">아이디 t1</p>
         <div class="grid-content bg-purple" @click="foucsEvent('id')">
             <v-input ref="idRef" v-model="id" clearable></v-input>
         </div>
