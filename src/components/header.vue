@@ -1,8 +1,13 @@
 <template>
     <div class="header">
         <ul>
-            <li>H1</li>
-            <li>H2</li>
+            <li>
+              <img src="../assets/resources/noname.svg" alt="noname">
+            </li>
+            <li>
+              <img src="../assets/resources/header_alram.svg" alt="noname">
+            </li>
+            
         </ul>
     </div>
 </template>

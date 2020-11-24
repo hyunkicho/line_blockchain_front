@@ -2,22 +2,26 @@
 <div class="login">
   <div class="login_wrap">
     <!-- <h1>NONAME</h1> -->
-    <img src="../assets/logo.png" alt="">
+    <div class="loginTop">
+      <img src="../assets/resources/noname.svg" alt="noname">
+      <p>로그인하고 다양한 혜택을 만나세요.</p>
+    </div>
+
     <v-row :gutter="10">
         <v-col :span="24">
-        <p>아이디</p>
-        <div class="grid-content bg-purple">
-            <v-input v-model="id" clearable></v-input>
+        <p :class="{focusOn : focusid}">아이디</p>
+        <div class="grid-content bg-purple" @click="foucsEvent('id')">
+            <v-input ref="idRef" v-model="id" clearable></v-input>
         </div>
         </v-col>
     </v-row>
     
     <v-row :gutter="20">
         <v-col :span="24">
-        <p>패스워드</p>
-        <div class="grid-content bg-purple">
-            <v-input v-model="pw" type="password" clearable @keyup.enter.native="loginSubmit"></v-input>
-        </div>
+          <p :class="{focusOn : focuspw}">패스워드</p>
+          <div class="grid-content bg-purple" @click="foucsEvent('pw')">
+              <v-input v-model="pw" type="password" clearable @keyup.enter.native="loginSubmit"></v-input>
+          </div>
         </v-col>
         <!-- <v-col :span="12">
         <div class="grid-content bg-purple">
@@ -56,6 +60,8 @@ export default {
   },
   data() {
     return {
+      focusid : true,
+      focuspw : false,
       loginBtnOn : false,
       id : "",
       pw : ""
@@ -72,8 +78,11 @@ export default {
     }
     // const { data } = await servlet.ajaxLogin("hello", data)
   },
+  mounted() {
+    this.$refs.idRef.focus()
+  },
   methods: {
-    loginSubmit () {
+    loginSubmit() {
       if(this.id == "admin" && this.pw == 123){
         this.$router.replace("/")
         sessionStorage.setItem(this.id, this.pw);
@@ -81,6 +90,17 @@ export default {
         msgBoxNo("아이디 또는 패스워드가 틀렸습니다.")
       }
     },
+
+    foucsEvent(val) {
+      if(val == 'id') { 
+        this.focusid = true;
+        this.focuspw = false;
+      }else{
+        console.log('pw')
+        this.focusid = false;
+        this.focuspw = true;
+      }
+    }
   },
 }
 </script>

@@ -1,33 +1,85 @@
 .main-wrap {
-    padding-top:40px;
+    padding-top:50px;
 }
 
 .wrap-margin { 
-    margin-left:15px;
-    margin-right:15px;
+   margin : 40px 15px 45px 15px;
 }
 
+.wrap-margin p:nth-child(2){
+    font-size: 19px;
+    text-align: left;
+    color: #747f89;
+    padding: 10px 0px 30px 0px;
+}
+
+.wrap-slide {display: flex; overflow-x:scroll; overflow-y:hidden; text-align:left;}
+.wrap-slide figure{width:100%; margin-right:10px;}
+.wrap-slide img{width:230px}
+.wrap-slide figcaption dt{font-size:16px; color:#747f89; margin:10px 0px 15px 0px}
+.wrap-slide figcaption dd:nth-child(2){font-size:18px; height: 50px;}
+.wrap-slide figcaption dd:nth-child(3){font-size:20px; font-weight: 600;}
+
+
+/* 메인 vue slider */
+.VueCarousel-slide img{ 
+    width : 100%;
+}
 
 /* 로그인 관련 */
 .login {
     display: flex;
     justify-content: center;
-    margin-top:70px;
-    /* align-items: center; */
+    align-items: center;
     height: 100vh;
-    
+    position: relative;
+    top: -80px;
 }
 .login_wrap{
-    width:80%;
+    width:88%;
 }
 .login p{ 
     text-align:left;
     margin-bottom: 10px;
+    font-size:12px;
+    color : #b5b6c4
 }
 .login .el-input {
     background-color: white;
-  }
+}
+
 .login .el-input--suffix .el-input__inner {
+    font-family: "Noto Sans KR", sans-serif !important;
+    border-radius: 50px;
+    font-size:12px;
+    font-weight: 400;
+    /* border: solid 1px #167af9; */
+}
+.login .el-input--suffix .el-input__inner:focus {
     border-radius: 50px;
     border: solid 1px #167af9;
-  }
+}
+
+.loginTop {margin-bottom:60px; text-align: center}
+.loginTop img{width:150px;}
+.loginTop p{text-align: center; color:#747f89; font-size:14px;}
+
+
+.focusOn {
+    color : #404750 !important;
+}
+
+.login .el-button {
+    width:120px;
+    border-radius: 50px;
+    background-color: #e9e9ed;
+    border-color:  #e9e9ed;
+    color : #b5b6c4
+}
+.login .el-button--primary{
+    width:120px;
+    border-radius: 50px;
+    background-color: #167af9;
+    border-color:  #167af9;
+    color : white
+}

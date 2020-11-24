@@ -12,7 +12,7 @@
     "element-ui": "^2.14.1",
     "noto-sans-kr": "^0.1.1",
     "vue": "^2.6.12",
-    "vue-owl-carousel2": "^2.0.7",
+    "vue-carousel": "^0.18.0",
     "vue-router": "^3.4.9",
     "vuex": "^3.5.1"
   },

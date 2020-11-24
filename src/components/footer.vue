@@ -1,6 +1,21 @@
 <template>
     <div class="footer">
-        footer
+        <ul>
+          <li>
+            <img src="../assets/resources/footer_home-24px.svg" alt="">
+          </li>
+          <li>
+            <img src="../assets/resources/footer_view_list-24px.svg" alt="">
+          </li>
+          <li>
+            <img src="../assets/resources/footer_search-24px.svg" alt="">
+          </li>
+          <li>
+            <img src="../assets/resources/footer_person-24px.svg" alt="">
+          </li>
+
+          
+        </ul>
     </div>
 </template>
 
@@ -21,7 +36,16 @@ export default {
   },
   data() {
     return {
-
+      // episodes: [{
+      //   thumbnail: 'http://thumbnail1.jpg',
+      //   description: 'Episode 1'
+      // },{
+      //   thumbnail: 'http://thumbnail2.jpg',
+      //   description: 'Episode 2'
+      // },{
+      //   thumbnail: 'http://thumbnail3.jpg',
+      //   description: 'Episode 3'
+      // }]
     }
   },
   async created () {
