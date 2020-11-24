@@ -2,16 +2,16 @@
     <div class="footer">
         <ul>
           <li>
-            <img src="../assets/resources/footer_home-24px.svg" alt="">
+            <img src="../assets/resources/footer_home.svg" alt="">
           </li>
           <li>
-            <img src="../assets/resources/footer_view_list-24px.svg" alt="">
+            <img src="../assets/resources/footer_list.svg" alt="">
           </li>
           <li>
-            <img src="../assets/resources/footer_search-24px.svg" alt="">
+            <img src="../assets/resources/footer_search.svg" alt="">
           </li>
           <li>
-            <img src="../assets/resources/footer_person-24px.svg" alt="">
+            <img src="../assets/resources/footer_profile.svg" alt="">
           </li>
 
           

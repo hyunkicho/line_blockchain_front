@@ -84,6 +84,8 @@ color: #42b983;
 }
 .footer ul li img{
     vertical-align: middle;
+    position: relative;
+    top: -5px;
 }
 /* 스크롤바 모두 제거 */
 ::-webkit-scrollbar {
