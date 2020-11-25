@@ -2,7 +2,7 @@
     <div class="header">
         <ul>
             <li>
-              <img src="../assets/resources/noname.svg" alt="noname1">
+              <img src="../assets/resources/blimit.svg" alt="Blimit">
             </li>
             <li>
               <img src="../assets/resources/header_alram.svg" alt="noname">

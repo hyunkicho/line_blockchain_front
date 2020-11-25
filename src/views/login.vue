@@ -3,7 +3,7 @@
   <div class="login_wrap">
     <!-- <h1>NONAME</h1> -->
     <div class="loginTop">
-      <img src="../assets/resources/noname.svg" alt="noname">
+      <img src="../assets/resources/blimit.svg" alt="Blimit">
       <p>로그인하고 다양한 혜택을 만나세요.</p>
     </div>
 

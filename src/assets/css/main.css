@@ -8,7 +8,7 @@
 }
 
 .wrap-margin p:nth-child(2){
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
     color: #747f89;
     padding: 10px 0px 30px 0px;
@@ -18,8 +18,8 @@
 .wrap-slide figure{ margin-right:10px;}
 .wrap-slide img{width:230px}
 .wrap-slide figcaption dt{font-size:14px; color:#747f89; margin:10px 0px 15px 0px}
-.wrap-slide figcaption dd:nth-child(2){font-size:16px; height: 50px;}
-.wrap-slide figcaption dd:nth-child(3){font-size:18px; font-weight: 600;}
+.wrap-slide figcaption dd:nth-child(2){font-size:14px; height: 50px;}
+.wrap-slide figcaption dd:nth-child(3){font-size:16px; font-weight: 600;}
 
 
 /* 메인 vue slider */

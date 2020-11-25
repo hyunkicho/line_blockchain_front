@@ -13,49 +13,7 @@
     <div class="wrap-margin">
       <h2>Just Dropped</h2>
       <p>발매상품</p>
-
-      <div class="wrap-slide">
-        <figure>
-          <img src="../assets/resources/slide_product1.png">
-          <figcaption>
-            <dl>
-              <dt>Jordan</dt>
-              <dd>Air Jordan 1 Retro High OG Turbo Green</dd>
-              <dd>410,000원</dd>
-            </dl>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/resources/slide_product2.png">
-          <figcaption>
-            <dl>
-              <dt>Jacob Cohen</dt>
-              <dd>Check pattern slim fit pants</dd>
-              <dd>623,000원</dd>
-            </dl>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/resources/slide_product1.png">
-          <figcaption>
-            <dl>
-              <dt>Jordan</dt>
-              <dd>Air Jordan 1 Retro High OG Turbo Green</dd>
-              <dd>410,000원</dd>
-            </dl>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/resources/slide_product2.png">
-          <figcaption>
-            <dl>
-              <dt>Jacob Cohen</dt>
-              <dd>Check pattern slim fit pants</dd>
-              <dd>623,000원</dd>
-            </dl>
-          </figcaption>
-        </figure>
-      </div>
+      <productList products='newProduct'/>
     </div>
 
     <carousel :per-page="1">
@@ -67,50 +25,7 @@
     <div class="wrap-margin">
       <h2>Most Popular</h2>
       <p>인기상품</p>
-
-      <div class="wrap-slide">
-        <figure>
-          <img src="../assets/resources/main3_product1.png">
-          <figcaption>
-            <dl>
-              <dt>Jordan</dt>
-              <dd>Air Jordan 1 Retro High OG Turbo Green</dd>
-              <dd>410,000원</dd>
-            </dl>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/resources/main3_product2.png">
-          <figcaption>
-            <dl>
-              <dt>Jordan</dt>
-              <dd>Air Jordan 1 Retro High OG Turbo Green</dd>
-              <dd>410,000원</dd>
-            </dl>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/resources/main3_product1.png">
-          <figcaption>
-            <dl>
-              <dt>Jordan</dt>
-              <dd>Air Jordan 1 Retro High OG Turbo Green</dd>
-              <dd>410,000원</dd>
-            </dl>
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/resources/main3_product2.png">
-          <figcaption>
-            <dl>
-              <dt>Jordan</dt>
-              <dd>Air Jordan 1 Retro High OG Turbo Green</dd>
-              <dd>410,000원</dd>
-            </dl>
-          </figcaption>
-        </figure>
-      </div>
-
+      <productList products='popularProduct'/>
     </div>
 
   </div>
@@ -125,6 +40,7 @@ import { Row, Col } from 'element-ui';
 /* custom */
 import header from '@/components/header.vue'
 import footer from '@/components/footer.vue'
+import productList from '@/components/product/productList.vue'
 import axios from "axios";
 import {Carousel, Slide} from 'vue-carousel';
 
@@ -135,6 +51,7 @@ export default {
     "v-col": Col,
     "header-nav" : header,
     "footer-nav" : footer,
+    "productList" :productList,
 
     "carousel" : Carousel,
     "slide" : Slide,

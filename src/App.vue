@@ -14,6 +14,7 @@ import "@/assets/css/reset.css";
 import "@/assets/css/common.css";
 import "@/assets/css/main.css";
 import "@/assets/css/elementui.css";
+import "@/assets/css/product.css";
 import 'element-ui/lib/theme-chalk/index.css';
 // import apps from "@/assets/js/apps.js";
 // import api from "@/assets/js/api.js";

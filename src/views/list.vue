@@ -1,26 +1,24 @@
 <template>
-    <div class="footer">
-        <ul>
-          <li v-for="(item,idx) in footerData" :key="idx">
-            <img :src="item.src" alt="" @click="footerRotuer(item.name)">
-          </li>
-
-          
-        </ul>
+<div class="search">
+    <div class="main-wrap">
+        <header-nav/>
+        listPage
+        <footer-nav/>
     </div>
+</div>
 </template>
 
 <script>
 import { Row, Col, Input, Button, Form, FormItem } from 'element-ui';
+import header from '@/components/header.vue'
+import footer from '@/components/footer.vue'
 export default {
   name: 'Footer',
   components: {
+    "header-nav" : header,
+    "footer-nav" : footer,
     "v-row": Row,
     "v-col": Col,
-    "v-input": Input,
-    "v-button" : Button,
-    "v-form" : Form,
-    "v-formitem" : FormItem
   },
   props: {
     // msg: String
@@ -29,7 +27,7 @@ export default {
     return {
       footerData : [
         { 
-            name : '',
+            name : 'home',
             src : require("@/assets/resources/footer_home.svg")
         },  
         { 
@@ -51,14 +49,8 @@ export default {
 
   },
   methods: {
-    footerRotuer(name){
-      this.$router.push({path: `/${name}`})
-    }
+
   },
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-
-</style>

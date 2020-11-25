@@ -13,7 +13,7 @@ body {
 }
 
 h2 {
-    font-size: 21px;
+    font-size: 19px;
     color: #404750;
     font-weight: 700;
     text-align: left;
@@ -51,6 +51,7 @@ color: #42b983;
     margin: auto;
 }
 .header ul li img{
+    width: 80%;
     vertical-align: middle;
 }
 
