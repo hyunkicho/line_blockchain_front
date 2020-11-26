@@ -65,8 +65,8 @@
             </div>
 
             <div class="salebtnWrap">
-                <button>구매 <span>|</span> {{productInfo[0].productPrice}}</button>
-                <button>판매 <span>|</span> {{productInfo[0].productPrice}}</button>
+                <button @click="sellBtnClick()">구매 <span>|</span> {{productInfo[0].productPrice}}</button>
+                <button @click="sellBtnClick()">판매 <span>|</span> {{productInfo[0].productPrice}}</button>
             </div>
 
 
@@ -102,6 +102,7 @@ import productHeader from '@/components/product/productHeader.vue'
 import footer from '@/components/footer.vue'
 import productList from '@/components/product/productList.vue'
 import productSize from '@/components/product/productSize.vue'
+import {msgBoxNo} from "@/assets/js/api.js";
 import {Carousel, Slide} from 'vue-carousel';
 import { Table, TableColumn, Dialog } from 'element-ui';
 
@@ -143,6 +144,16 @@ export default {
 
       btnTab(btn){
         this.btnidx = btn;
+      },
+
+      sellBtnClick() {
+          if(this.size == 0){
+              msgBoxNo("사이즈를 선택해주세요")
+              this.dialogVisible = true;
+          }else{
+              this.$router.push("/productDetail_account")
+          }
+          
       }
   },
 

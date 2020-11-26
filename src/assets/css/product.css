@@ -93,6 +93,9 @@
     left: 0px;
     right: 0px;
     z-index: 10;
+    max-width: 768px;
+    margin: auto;
+    background-color: white;
 }
 .salebtnWrap div{
     background-color: white;

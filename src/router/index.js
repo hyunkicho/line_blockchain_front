@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Index from '../views/index.vue'
 import Login from '../views/login.vue'
 import ProductDetail from '../views/productDetail.vue'
+import productDetail_account from '../views/productDetail_account.vue'
 import List from '../views/list.vue'
 import Search from '../views/search.vue'
 import Profile from '../views/profile.vue'
@@ -26,7 +27,11 @@ const routes = [
     path: '/productDetail',
     name: 'productDetail',
     component: ProductDetail,
-
+  },
+  {
+    path: '/productDetail_account',
+    name: 'productDetail_account',
+    component: productDetail_account,
   },
   {
     path: '/list',
