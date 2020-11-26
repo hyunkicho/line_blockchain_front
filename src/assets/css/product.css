@@ -44,6 +44,10 @@
     color:#404750;
     margin-left:auto;
 }
+.productDetail .descr section:nth-child(1) ul li:nth-child(2) img{
+    position: relative;
+    top: -2px;
+}
 
 /* 섹션2 상품 사이즈 등 */
 .productDetail .descr section:nth-child(2) {
@@ -68,8 +72,8 @@
 }
 .productDetail .descr section:nth-child(2) .buttonWrap .active:nth-child(1){
     color:white;
-    background-color: #167af9
-    /* background-color: #404750 */
+    /* background-color: #167af9 */
+    background-color: #404750
 }
 .productDetail .descr section:nth-child(2) .buttonWrap .active:nth-child(2){
     color:white;
@@ -96,6 +100,7 @@
     margin: auto;
     height: 65px;
     display: flex;
+    justify-content: center;
     border-top: 1px solid #d9d9d9;
     align-items: center;
 }
@@ -130,6 +135,55 @@
 .sizeDialog .el-dialog {
     margin-top:40vh !important;
     width:100% !important;
+    max-width: 768px;
     border-radius: 20px;
     height: 100%;
+}
+.sizeDialog .el-dialog__body {
+    padding:0px 20px;
+}
+.sizeDialog .el-dialog__header {
+    text-align: left;
+    font-weight: 700;
+}
+.sizeDialog p:nth-child(1) {
+    font-size:15px;
+    color:#747f89;
+    text-align: left;
+    margin-bottom:20px;
+}
+
+.sizeButtonWrap{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.sizeButtonWrap button{
+    color:#747f89;
+    width: 46%;
+    height: 50px;
+    margin: 15px 10px -5px 01px;
+    background: #eceff5;
+    border: none;
+    border-radius: 30px;
+}
+
+.sizeButtonWrap button span:nth-child(2){
+    font-size: 11px;
+    color: #747f89;
+    position: relative;
+    top: -1px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.sizeButtonWrap button span:nth-child(3){
+    color:#167af9;
+    font-weight: 500;
+}
+.sizeButtonWrap .active{
+    background-color:#167af9;
+    color:white;
+}
+.sizeButtonWrap .active span {
+    color:white !important;
 }

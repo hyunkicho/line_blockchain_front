@@ -15,7 +15,6 @@ export default new Vuex.Store({
             productPrice : "623,000원",
             src : require("@/assets/resources/slide_product1.png"),
             size : {
-                "all" : "1,657,000",
                 "250" : "1,622,000",
                 "255" : "1,667,000",
                 "260" : "1,729,000",
@@ -25,7 +24,8 @@ export default new Vuex.Store({
                 "280" : "1,697,000",
                 "285" : "1,627,000",
                 "290" : "1,727,000",
-                "300" : "1,655,000",
+                "295" : "1,757,000",
+                "300" : "1,857,000",
             }
         },
         {
@@ -35,7 +35,20 @@ export default new Vuex.Store({
             tag : "jacobcohen",
             productDesc : "Check pattern slim fit pants",
             productPrice : "410,000원",
-            src : require("@/assets/resources/slide_product2.png")
+            src : require("@/assets/resources/slide_product2.png"),
+            size : {
+                "250" : "1,622,000",
+                "255" : "1,667,000",
+                "260" : "1,729,000",
+                "265" : "1,687,000",
+                "270" : "1,637,000",
+                "275" : "1,617,000",
+                "280" : "1,697,000",
+                "285" : "1,627,000",
+                "290" : "1,727,000",
+                "295" : "1,727,000",
+                "300" : "1,655,000",
+            }
         },
         {
             gubun : 'newItem',
@@ -46,7 +59,6 @@ export default new Vuex.Store({
             productPrice : "623,000원",
             src : require("@/assets/resources/slide_product1.png"),
             size : {
-                "all" : "1,657,000",
                 "250" : "1,622,000",
                 "255" : "1,667,000",
                 "260" : "1,729,000",
@@ -56,6 +68,7 @@ export default new Vuex.Store({
                 "280" : "1,697,000",
                 "285" : "1,627,000",
                 "290" : "1,727,000",
+                "295" : "1,727,000",
                 "300" : "1,655,000",
             }
         },
@@ -79,7 +92,6 @@ export default new Vuex.Store({
             productPrice : "1,657,000원",
             src : require("@/assets/resources/main3_product1.png"),
             size : {
-                "all" : "1,657,000",
                 "250" : "1,622,000",
                 "255" : "1,667,000",
                 "260" : "1,729,000",
@@ -89,6 +101,7 @@ export default new Vuex.Store({
                 "280" : "1,697,000",
                 "285" : "1,627,000",
                 "290" : "1,727,000",
+                "295" : "1,655,000",
                 "300" : "1,655,000",
             }
         },
@@ -99,7 +112,20 @@ export default new Vuex.Store({
             tag : "balenciaga",
             productDesc : "Balenciaga Track Sneakers Black",
             productPrice : "665,000원",
-            src : require("@/assets/resources/main3_product2.png")
+            src : require("@/assets/resources/main3_product2.png"),
+            size : {
+                "250" : "1,622,000",
+                "255" : "1,667,000",
+                "260" : "1,729,000",
+                "265" : "1,687,000",
+                "270" : "1,637,000",
+                "275" : "1,617,000",
+                "280" : "1,697,000",
+                "285" : "1,627,000",
+                "290" : "1,727,000",
+                "295" : "1,727,000",
+                "300" : "1,655,000",
+            }
         },
         {
             gubun : 'mostItem',
@@ -109,6 +135,19 @@ export default new Vuex.Store({
             productDesc : "Cargo Flight Boomer Jacket",
             productPrice : "1,657,000원",
             src : require("@/assets/resources/main3_product1.png"),
+            size : {
+                "250" : "1,622,000",
+                "255" : "1,667,000",
+                "260" : "1,729,000",
+                "265" : "1,687,000",
+                "270" : "1,637,000",
+                "275" : "1,617,000",
+                "280" : "1,697,000",
+                "285" : "1,627,000",
+                "290" : "1,727,000",
+                "295" : "1,727,000",
+                "300" : "1,655,000",
+            }
 
         },
         {
@@ -118,7 +157,20 @@ export default new Vuex.Store({
             tag : "balenciaga",
             productDesc : "Balenciaga Track Sneakers Black",
             productPrice : "665,000원",
-            src : require("@/assets/resources/main3_product2.png")
+            src : require("@/assets/resources/main3_product2.png"),
+            size : {
+                "250" : "1,622,000",
+                "255" : "1,667,000",
+                "260" : "1,729,000",
+                "265" : "1,687,000",
+                "270" : "1,637,000",
+                "275" : "1,617,000",
+                "280" : "1,697,000",
+                "285" : "1,627,000",
+                "290" : "1,727,000",
+                "295" : "1,727,000",
+                "300" : "1,655,000",
+            }
         },
     ],
     size : [
@@ -129,7 +181,20 @@ export default new Vuex.Store({
             tag : "balenciaga",
             productDesc : "Balenciaga Track Sneakers Black",
             productPrice : "665,000원",
-            src : require("@/assets/resources/main3_product2.png")
+            src : require("@/assets/resources/main3_product2.png"),
+            size : {
+                "250" : "1,622,000",
+                "255" : "1,667,000",
+                "260" : "1,729,000",
+                "265" : "1,687,000",
+                "270" : "1,637,000",
+                "275" : "1,617,000",
+                "280" : "1,697,000",
+                "285" : "1,627,000",
+                "290" : "1,727,000",
+                "295" : "1,727,000",
+                "300" : "1,655,000",
+            }
         },
     ]
 

@@ -17,11 +17,13 @@
                     <p>{{productInfo[0].productDesc}}</p>
                     <ul>
                         <li>사이즈</li>
-                        <li @click="dialogVisible = true">모든 사이즈 <img src="@/assets/resources/more_arrow.svg" alt="arrow"></li>
+                        <li v-if="size == 0" @click="dialogVisible = true">모든 사이즈 <img src="@/assets/resources/more_arrow.svg" alt="arrow"></li>
+                        <li v-else @click="dialogVisible = true"> {{size}} <img src="@/assets/resources/more_arrow.svg" alt="arrow"></li>
                     </ul>
                     <ul>
                         <li>최근 판매가</li>
-                        <li><b>{{productInfo[0].productPrice}}</b></li>
+                        <li v-if="size == 0"><b>{{productInfo[0].productPrice}}</b></li>
+                        <li v-else><b>{{productInfo[0].productPrice}}</b></li>
                     </ul>
                 </section>
 
@@ -63,31 +65,32 @@
             </div>
 
             <div class="salebtnWrap">
-                <div>
-                    <button>구매 <span>|</span> 545,000원</button>
-                    <button>판매 <span>|</span> 550,000원</button>
-                </div>
+                <button>구매 <span>|</span> {{productInfo[0].productPrice}}</button>
+                <button>판매 <span>|</span> {{productInfo[0].productPrice}}</button>
             </div>
 
 
             <div class="sizeDialog">
                 <v-dialog
-                    title="Size"
+                    title="사이즈 선택"
                     :visible.sync="dialogVisible"
                     width="90%"
                     >
-                    <button ></button>
+                    <p>즉시 판매가 (원)</p>
+                    <div class="sizeButtonWrap">
+                        <button :class="{active : sizeidx == 100}"><span>모든사이즈</span>  <span style="padding:0px;"></span><span>{{productInfo[0].productPrice}}</span></button>
+                        <button v-for="(item,idx) in sizesKey" :key="idx" @click="sizeBtnClick(idx, item)" :class="{active : idx == sizeidx}">
+                            <span>{{item}}</span> <span> | </span> <span>{{sizesPrice[idx]}}</span>
+                        </button>
+                    </div>
                     <!-- <span slot="footer" class="dialog-footer">
                         <v-button @click="dialogVisible = false">Cancel</v-button>
                         <v-button type="primary" @click="dialogVisible = false">Confirm</v-button>
                     </span> -->
                 </v-dialog>
             </div>
-         
-
         <!-- <footer-nav/> -->
     </div>
-
 </div>
 </template>
 
@@ -127,9 +130,16 @@ export default {
                   return e
               }
           })
-
-          let data = this.productInfo;
+          this.sizesKey = Object.keys(this.productInfo[0].size)
+          this.sizesPrice = Object.values(this.productInfo[0].size)
       },
+
+      sizeBtnClick(idx,size){
+          this.sizeidx = idx;
+          this.size = size;
+          this.productInfo[0].productPrice = this.sizesPrice[idx];
+          this.dialogVisible = false;
+      },    
 
       btnTab(btn){
         this.btnidx = btn;
@@ -138,7 +148,11 @@ export default {
 
   data() {
     return {
+        sizeidx : 100,
+        size : 0,
         dialogVisible : false,
+        sizesKey : "",
+        sizesPrice : "",
         productInfo : "",
         buttons : ['구매입찰', '판매입찰'],
         btnidx : 0,
