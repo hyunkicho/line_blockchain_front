@@ -1,7 +1,7 @@
 <template>
 <div class="productDetail">
     <div class="main-wrap">
-        <header-nav/>
+        <productHeader-nav/>
             <carousel :per-page="1">
                 <slide style="background:#eceff5">
                     <img :src="productInfo[0].src">
@@ -17,7 +17,7 @@
                     <p>{{productInfo[0].productDesc}}</p>
                     <ul>
                         <li>사이즈</li>
-                        <li>모든 사이즈 <img src="@/assets/resources/more_arrow.svg" alt="arrow"></li>
+                        <li @click="dialogVisible = true">모든 사이즈 <img src="@/assets/resources/more_arrow.svg" alt="arrow"></li>
                     </ul>
                     <ul>
                         <li>최근 판매가</li>
@@ -63,11 +63,29 @@
             </div>
 
             <div class="salebtnWrap">
-                <button>구매 <span>|</span> 545,000원</button>
-                <button>판매 <span>|</span> 550,000원</button>
+                <div>
+                    <button>구매 <span>|</span> 545,000원</button>
+                    <button>판매 <span>|</span> 550,000원</button>
+                </div>
             </div>
 
-        <footer-nav/>
+
+            <div class="sizeDialog">
+                <v-dialog
+                    title="Size"
+                    :visible.sync="dialogVisible"
+                    width="90%"
+                    >
+                    <button ></button>
+                    <!-- <span slot="footer" class="dialog-footer">
+                        <v-button @click="dialogVisible = false">Cancel</v-button>
+                        <v-button type="primary" @click="dialogVisible = false">Confirm</v-button>
+                    </span> -->
+                </v-dialog>
+            </div>
+         
+
+        <!-- <footer-nav/> -->
     </div>
 
 </div>
@@ -77,18 +95,21 @@
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
-import header from '@/components/header.vue'
+import productHeader from '@/components/product/productHeader.vue'
 import footer from '@/components/footer.vue'
 import productList from '@/components/product/productList.vue'
+import productSize from '@/components/product/productSize.vue'
 import {Carousel, Slide} from 'vue-carousel';
-import { Table, TableColumn } from 'element-ui';
+import { Table, TableColumn, Dialog } from 'element-ui';
 
 export default {
   components: {
     "v-table": Table,
+    "v-dialog": Dialog,
     "v-table-column": TableColumn,
     "productList" :productList,
-    "header-nav" : header,
+    "productSize" :productSize,
+    "productHeader-nav" : productHeader,
     "footer-nav" : footer,
     "carousel" : Carousel,
     "slide" : Slide,
@@ -107,8 +128,9 @@ export default {
               }
           })
 
-
+          let data = this.productInfo;
       },
+
       btnTab(btn){
         this.btnidx = btn;
       }
@@ -116,6 +138,7 @@ export default {
 
   data() {
     return {
+        dialogVisible : false,
         productInfo : "",
         buttons : ['구매입찰', '판매입찰'],
         btnidx : 0,
