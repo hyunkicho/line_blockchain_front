@@ -28,7 +28,12 @@
       <productList products='popularProduct'/>
     </div>
 
+    <div class="plusBtnWrap" @click="plusRouter()">
+      <img src="../assets/resources/plus.svg" alt="">
+    </div>
+
   </div>
+
 
   <footer-nav/>
 </div>
@@ -58,16 +63,14 @@ export default {
   },
   data() {
     return {
-        sampleData: [
-          '<div class="example-slide">Slide 1</div>',
-          '<div class="example-slide">Slide 2</div>',
-          '<div class="example-slide">Slide 3</div>',
-        ],
 
-      // loginBool: false
     }
   },
   methods: {
+    plusRouter(){
+       this.$router.push({path: '/search'})
+    },
+
     corsRequest() {
       axios.get("/api/getList")
       .then((res) => {
@@ -86,5 +89,4 @@ export default {
 }
 </script>
 <style>
-.test img{width:300px; height:200px}
 </style>

@@ -2,7 +2,7 @@
     <div class="footer">
         <ul>
           <li v-for="(item,idx) in footerData" :key="idx">
-            <img :src="item.src" alt="" @click="footerRotuer(item.name)">
+            <img :src="item.src" alt="" @click="footerRotuer(item.name, idx)">
           </li>
 
           
@@ -27,7 +27,7 @@ export default {
       footerData : [
         { 
             name : '',
-            src : require("@/assets/resources/footer_home.svg")
+            src : require("@/assets/resources/footer_home_active.svg"),
         },  
         { 
             name : 'list',
@@ -48,7 +48,7 @@ export default {
 
   },
   methods: {
-    footerRotuer(name){
+    footerRotuer(name,idx){
       this.$router.push({path: `/${name}`})
     }
   },

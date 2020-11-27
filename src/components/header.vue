@@ -2,7 +2,10 @@
     <div class="header">
         <ul>
             <li>
-              <img src="../assets/resources/blimit.svg" alt="Blimit">
+              <router-link to="/">
+                <img src="../assets/resources/blimit.svg" alt="Blimit">
+
+              </router-link>
             </li>
             <li>
               <img src="../assets/resources/header_alram.svg" alt="noname">

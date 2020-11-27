@@ -47,13 +47,10 @@
                         <li  v-else style="color:#b0b0b0">-</li>
                     </ul>
                 </div>
-
-
-                
             </section>
 
             <section>
-
+                
             </section>
         </div>
     </div>

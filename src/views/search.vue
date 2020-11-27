@@ -2,7 +2,7 @@
 <div class="search">
     <div class="main-wrap">
         <header-nav/>
-          Search Page
+          <search-compo/>
         <footer-nav/>
     </div>
 </div>
@@ -12,11 +12,13 @@
 import { Row, Col, Input, Button, Form, FormItem } from 'element-ui';
 import header from '@/components/header.vue'
 import footer from '@/components/footer.vue'
+import searchCompo from '@/components/search_compo.vue'
 export default {
   name: 'Search',
   components: {
     "header-nav" : header,
     "footer-nav" : footer,
+    "search-compo" : searchCompo,
     "v-row": Row,
     "v-col": Col,
   },

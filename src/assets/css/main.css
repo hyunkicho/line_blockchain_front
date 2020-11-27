@@ -84,3 +84,14 @@
     border-color:  #167af9;
     color : white
 }
+
+
+.plusBtnWrap {
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    left: 0;
+    max-width: 768px;
+    margin: auto;
+    text-align: right;
+}
