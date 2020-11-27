@@ -95,7 +95,10 @@
     z-index: 10;
     max-width: 768px;
     margin: auto;
+    height: 70px;
     background-color: white;
+    line-height: 70px;
+    border-top: 1px solid #b5b5b5;
 }
 .salebtnWrap div{
     background-color: white;

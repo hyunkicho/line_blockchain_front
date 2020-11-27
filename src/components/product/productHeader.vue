@@ -13,16 +13,12 @@
 </template>
 
 <script>
-import { Row, Col, Input, Button, Form, FormItem } from 'element-ui';
+import { Row, Col} from 'element-ui';
 export default {
   name: 'Header',
   components: {
     "v-row": Row,
     "v-col": Col,
-    "v-input": Input,
-    "v-button" : Button,
-    "v-form" : Form,
-    "v-formitem" : FormItem
   },
   props: {
     // msg: String

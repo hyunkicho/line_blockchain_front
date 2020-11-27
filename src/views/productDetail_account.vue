@@ -1,8 +1,61 @@
 <template>
-<div class="productDetail">
+<div class="productAccount">
     <div class="main-wrap">
         <productHeader-nav/>
-        Account 페이지..
+        <div>
+            <section>
+                <div class="productInfoWrap">
+                    <img :src="datas.src">
+                    <ul>
+                        <li>Air Force 1 Low Peaceminusone Para-Noise</li>
+                        <li><span>사이즈</span> 250</li>
+                    </ul>
+                </div>
+
+                <div class="productPrices">
+                    <ul>
+                        <li>즉시 구매가</li>
+                        <li>{{datas.productPrice}}원</li>
+                    </ul>
+                    <ul>
+                        <li>즉시 판매가</li>
+                        <li>{{datas.productPrice}}원</li>
+                    </ul>
+                </div>
+
+                <div class="buttonWrap">
+                    <button :class="{active : btnidx == idx}" v-for="(btn,idx) in priceButtons" :key="btn" @click="priceButtonsTab(idx)">{{btn}}</button>
+                </div>
+                <div class="priceInputWrap">
+                    <template>
+                        <img src="@/assets/resources/pricesell.svg" alt="price">
+                        <v-input v-if="this.btnidx==0" v-model="form.num" @change="handleChange" placeholder="희망가 입력"></v-input>
+                        <div v-else>{{datas.productPrice}}</div>
+                        <!-- <v-input v-model="price" type="number">{{datas.productPrice}}</v-input> -->
+                        <span>원</span>
+                    </template>
+                </div>
+
+                <div class="productPrices">
+                    <ul>
+                        <li>접수비</li>
+                        <li>-</li>
+                    </ul>
+                    <ul>
+                        <li>배송비</li>
+                        <li  v-if="this.btnidx==0">선불∙판매자 부담</li>
+                        <li  v-else style="color:#b0b0b0">-</li>
+                    </ul>
+                </div>
+
+
+                
+            </section>
+
+            <section>
+
+            </section>
+        </div>
     </div>
 </div>
 </template>
@@ -15,44 +68,61 @@ import productHeader from '@/components/product/productHeader.vue'
 import footer from '@/components/footer.vue'
 import productList from '@/components/product/productList.vue'
 import productSize from '@/components/product/productSize.vue'
-import {msgBoxNo} from "@/assets/js/api.js";
-import {Carousel, Slide} from 'vue-carousel';
-import { Table, TableColumn, Dialog } from 'element-ui';
+import {msgBoxNo, } from "@/assets/js/api.js";
+import { Table, TableColumn, Dialog, Input } from 'element-ui';
 
 export default {
   components: {
     "v-table": Table,
     "v-dialog": Dialog,
+    "v-input": Input,
     "v-table-column": TableColumn,
     "productList" :productList,
     "productSize" :productSize,
     "productHeader-nav" : productHeader,
-    "footer-nav" : footer,
-    "carousel" : Carousel,
-    "slide" : Slide,
   },
 
   created() {
+      this.init()
     // this.init(this.$route.query.product, this.$route.query.gubun)
+  },
+
+  watch: {
+    // price: function(newVal) {
+    //     this.price = newVal.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //     // return ( newVal === 0 ) ? "" : newVal.toLocaleString( "en-US" );
+    // }
+  },
+
+  computed: {
+      
   },
 
   methods: {
       init(product,gubun) {
-          const datas = this.$store.state[gubun]
-          this.productInfo = datas.filter(e=> {
-              if(e.tag == product){
-                  return e
-              }
-          })
-          this.sizesKey = Object.keys(this.productInfo[0].size)
-          this.sizesPrice = Object.values(this.productInfo[0].size)
+          this.datas = this.$route.params.product;
+      },
+
+      handleChange(value) {
+        let vm = this;
+        let res = value.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        this.$set(this.form,'num',res);
+        
+      },
+
+      priceButtonsTab(btn){
+        this.btnidx = btn;
       },
 
   },
 
   data() {
     return {
-      
+        form :{},
+        datas : "",
+        btnidx : 1,
+        price : 0,
+        priceButtons : ['판매입찰', '즉시판매'],
       };
   },
 
