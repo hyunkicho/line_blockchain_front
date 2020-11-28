@@ -1,0 +1,107 @@
+.productAccount section:nth-child(1) { 
+    padding-bottom: 10px;
+    border-bottom: 7px solid #eceff5;
+}
+.productAccount section:nth-child(1) .productInfoWrap { 
+    display: flex;
+    padding: 20px;
+    background-color: #f9faff;
+    align-items: center;
+}
+.productAccount section:nth-child(1) .productInfoWrap li{
+    width:100%; 
+    text-align: left;
+    font-size: 14px;
+    color:#404750;
+    font-weight:500;
+
+}
+.productAccount section:nth-child(1) .productInfoWrap li:nth-child(1){
+    margin-bottom:20px
+}
+.productAccount section:nth-child(1) .productInfoWrap li:nth-child(2) span {
+    color : #747f89
+}
+.productAccount section:nth-child(1) .productInfoWrap img { 
+    width:130px;
+}
+
+/* section1 price */
+.productAccount section:nth-child(1) .productPrices {
+    display: flex;
+    flex-wrap:wrap;
+    margin: 10px 10px 10px 10px
+}
+.productAccount section:nth-child(1) .productPrices ul{
+    display: flex;
+    width: 100%;
+}
+.productAccount section:nth-child(1) .productPrices ul li{
+    padding: 10px 10px 10px 10px;
+    color: #747f89;
+}
+.productAccount section:nth-child(1) .productPrices li:nth-child(2){
+    color:#404750;
+    margin-left: auto;
+    font-weight: 500;
+}
+.productAccount section:nth-child(1) .productPrices li:nth-child(4){
+    color:#404750;
+    margin-left: auto;
+    font-weight: 500;
+}
+
+
+.productAccount section:nth-child(1) .buttonWrap {
+    background-color: #eceff5;
+    border-radius: 50px;
+    margin-bottom:20px;
+    margin:15px 20px 10px 20px;
+}
+.productAccount section:nth-child(1) .buttonWrap button{
+    border-radius: 50px;
+}
+.productAccount section:nth-child(1) .buttonWrap .active:nth-child(1){
+    color:white;
+    /* background-color: #167af9 */
+    background-color: #167af9;
+}
+.productAccount section:nth-child(1) .buttonWrap .active:nth-child(2){
+    color:white;
+    background-color: #167af9
+}
+
+.productAccount section:nth-child(1) button {
+    width:50%;
+    height: 40px;
+    background: #eceff5;
+    border: none;
+}
+
+.productAccount section:nth-child(1) .priceInputWrap {
+   display: flex;
+   margin: 15px 20px 10px 20px;
+   border-bottom: 1px solid #dadae1;
+}
+.productAccount section:nth-child(1) .priceInputWrap .el-input__inner{
+   border: none;
+   font-size:18px;
+   font-weight: 600;
+   text-align: right;
+   padding-right: 0px;
+}
+.productAccount section:nth-child(1) .priceInputWrap div{
+    margin-left: auto;
+    line-height: 37px;
+    margin-right: 9px;
+    height:40px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+.productAccount section:nth-child(1) .priceInputWrap span{
+   line-height: 37px;
+   font-size:20px;
+   font-weight: 600;
+}

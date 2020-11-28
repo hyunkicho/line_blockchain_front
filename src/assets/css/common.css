@@ -12,9 +12,13 @@ body {
     color: #2c3e50;
 }
 
-h3 {
-    margin: 40px 0 0;
+h2 {
+    font-size: 19px;
+    color: #404750;
+    font-weight: 700;
+    text-align: left;
 }
+
 ul {
 list-style-type: none;
 padding: 0;
@@ -34,15 +38,25 @@ color: #42b983;
     left:0px;
     right:0px;
     width:100%;
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 50px;
     z-index: 10;
 }
 
 .header ul {
+    display:flex;
+    background-color: white;
     width: 100%;
     max-width: 768px;
     margin: auto;
+}
+.header ul li img{
+    width: 80%;
+    vertical-align: middle;
+}
+
+.header ul li:nth-child(2){
+    margin-left:auto;
 }
 
 /* 푸터 관련*/
@@ -52,17 +66,28 @@ color: #42b983;
     left: 0;
     right: 0;
     width: 100%;
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 50px;
     z-index: 10;
 }
 
 .footer ul {
+    display: flex;
+    box-shadow: 0px -1px 6px 0px rgba(0,0,0,0.25);
     width: 100%;
+    background-color: white;
     max-width: 768px;
     margin: auto;
 }
-
+.footer ul li {
+    width: 100%;
+    line-height: 55px;
+}
+.footer ul li img{
+    vertical-align: middle;
+    position: relative;
+    top: -5px;
+}
 /* 스크롤바 모두 제거 */
 ::-webkit-scrollbar {
     display:none

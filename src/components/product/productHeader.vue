@@ -1,14 +1,11 @@
 <template>
     <div class="header">
         <ul>
-            <li>
-              <router-link to="/">
-                <img src="../assets/resources/blimit.svg" alt="Blimit">
-
-              </router-link>
+            <li style="width:22px; padding-left:10px" @click="$router.go(-1)">
+                <img src="@/assets/resources/backspace.svg" alt="Back">
             </li>
             <li>
-              <img src="../assets/resources/header_alram.svg" alt="noname">
+              <img src="@/assets/resources/header_alram.svg" alt="noname">
             </li>
             
         </ul>
@@ -16,16 +13,12 @@
 </template>
 
 <script>
-import { Row, Col, Input, Button, Form, FormItem } from 'element-ui';
+import { Row, Col} from 'element-ui';
 export default {
   name: 'Header',
   components: {
     "v-row": Row,
     "v-col": Col,
-    "v-input": Input,
-    "v-button" : Button,
-    "v-form" : Form,
-    "v-formitem" : FormItem
   },
   props: {
     // msg: String
