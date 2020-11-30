@@ -2,7 +2,7 @@
 <div>
 
   <div class="main-wrap">
-    <header-nav/>
+    <header-nav :header="header"/>
 
     <carousel :per-page="1">
       <slide>
@@ -63,12 +63,26 @@ export default {
   },
   data() {
     return {
-
+        header : {
+            width:"80%",
+            left : {
+                src : require("@/assets/resources/blimit.svg"),
+                action : "index"
+            },
+            right : {
+                src : require("@/assets/resources/header_alram.svg"),
+                action : "alram"
+            },
+        }
     }
   },
   methods: {
     plusRouter(){
-       this.$router.push({path: '/search'})
+       this.$router.push({path: '/search'}).catch(error => {
+          if(error.name != "NavigationDuplicated" ){
+            throw error;
+          }
+        });
     },
 
     corsRequest() {

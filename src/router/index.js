@@ -2,12 +2,14 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../views/index.vue'
 import Login from '../views/login.vue'
-import ProductDetail from '../views/productDetail.vue'
-import productDetail_account from '../views/productDetail_account.vue'
-import List from '../views/list.vue'
-import Search from '../views/search.vue'
-import Profile from '../views/profile.vue'
-// import Login from '../components/login.vue'
+import ProductDetail from '../views/product/productDetail.vue'
+import productDetail_account from '../views/product/productDetail_account.vue'
+import productDetail_completion from '../views/product/productDetail_completion.vue'
+import List from '../views/footer/list.vue'
+import Search from '../views/footer/search.vue'
+import Profile from '../views/footer/profile.vue'
+import Alram from '../views/alram.vue'
+
 
 Vue.use(VueRouter)
 
@@ -29,9 +31,14 @@ const routes = [
     component: ProductDetail,
   },
   {
-    path: '/productDetail_account',
+    path: '/productdetail_account',
     name: 'productDetail_account',
     component: productDetail_account,
+  },
+  {
+    path: '/productdetail_completion',
+    name: 'productDetail_completion',
+    component: productDetail_completion,
   },
   {
     path: '/list',
@@ -49,6 +56,12 @@ const routes = [
     path: '/profile',
     name: 'profile',
     component: Profile
+    // component: () => import('../views/About.vue')
+  },
+  {
+    path: '/alram',
+    name: 'alram',
+    component: Alram
     // component: () => import('../views/About.vue')
   }
 ]

@@ -1,7 +1,7 @@
 <template>
 <div class="productDetail">
     <div class="main-wrap">
-        <productHeader-nav/>
+        <header-nav :header="header" />
             <carousel :per-page="1">
                 <slide style="background:#eceff5">
                     <img :src="productInfo[0].src">
@@ -98,10 +98,9 @@
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
-import productHeader from '@/components/product/productHeader.vue'
+import header from '@/components/header.vue'
 import footer from '@/components/footer.vue'
 import productList from '@/components/product/productList.vue'
-import productSize from '@/components/product/productSize.vue'
 import {msgBoxNo} from "@/assets/js/api.js";
 import {Carousel, Slide} from 'vue-carousel';
 import { Table, TableColumn, Dialog } from 'element-ui';
@@ -112,8 +111,7 @@ export default {
     "v-dialog": Dialog,
     "v-table-column": TableColumn,
     "productList" :productList,
-    "productSize" :productSize,
-    "productHeader-nav" : productHeader,
+    "header-nav" : header,
     "footer-nav" : footer,
     "carousel" : Carousel,
     "slide" : Slide,
@@ -151,10 +149,9 @@ export default {
               msgBoxNo("사이즈를 선택해주세요")
               this.dialogVisible = true;
           }else{
-              this.$router.push({name: "productDetail_account", params: {product: this.productInfo[0], age:4} })
+              this.$router.replace({name: "productDetail_account", params: {product: this.productInfo[0]} })
             //   this.$router.push({path: '/productDetail_account', query : {price:this.productInfo[0].productPrice, size:this.size}, params: {name: 'dog', age:4} })
-          }
-          
+          } 
       }
   },
 
@@ -185,7 +182,18 @@ export default {
             count: '1',
             size: '275',
             sell: '490,000원'
-          }]
+        }],
+
+        header : {
+            left : {
+                src : require("@/assets/resources/backspace.svg"),
+                action : "back"
+            },
+            right : {
+                src : require("@/assets/resources/header_info.svg"),
+                action : null
+            },
+        }
     };
   },
 

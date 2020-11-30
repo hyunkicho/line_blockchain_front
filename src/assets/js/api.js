@@ -24,6 +24,15 @@ function msgBoxNo(errmsg) {
     });          
 }
 
+function routerReplace(url){
+
+  this.$router.replace(url).catch(error => {
+    if(error.name != "NavigationDuplicated" ){
+      throw error;
+    }
+  });
+}
+
 
 /* input 3자리마다 콤마 */
 function numberComma(x) {
@@ -35,5 +44,6 @@ function numberComma(x) {
 export {
   msgBoxYesorNo,
   msgBoxNo,
-  numberComma
+  numberComma,
+  routerReplace
 };

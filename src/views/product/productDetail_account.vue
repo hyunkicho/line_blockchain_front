@@ -1,7 +1,7 @@
 <template>
 <div class="productAccount">
     <div class="main-wrap">
-        <productHeader-nav/>
+        <header-nav :header="header"/>
         <div>
             <section>
                 <div class="productInfoWrap">
@@ -29,7 +29,7 @@
                 <div class="priceInputWrap">
                     <template>
                         <img src="@/assets/resources/pricesell.svg" alt="price">
-                        <v-input v-if="this.btnidx==0" v-model="form.num" @change="handleChange" placeholder="희망가 입력"></v-input>
+                        <v-input v-if="this.btnidx==0" v-model="price" placeholder="희망가 입력"></v-input>
                         <div v-else>{{datas.productPrice}}</div>
                         <!-- <v-input v-model="price" type="number">{{datas.productPrice}}</v-input> -->
                         <span>원</span>
@@ -43,17 +43,34 @@
                     </ul>
                     <ul>
                         <li>배송비</li>
-                        <li  v-if="this.btnidx==0">선불∙판매자 부담</li>
-                        <li  v-else style="color:#b0b0b0">-</li>
+                        <li v-if="this.btnidx==0">선불∙판매자 부담</li>
+                        <li v-else style="color:#b0b0b0">-</li>
                     </ul>
                 </div>
             </section>
 
-            <section>
-                
-            </section>
+            <!-- <section>
+                <ul>
+                    <li>판매 정산 계좌</li>
+                    <li>국민은행 </li>
+                </ul>
+                <ul>
+                    <li>반송 주소</li>
+                    <li>주소테스트</li>
+                </ul>
+            </section> -->
+
+        </div>
+        <div class="account_footer">
+            <ul>
+                <li>총 결제 금액</li>
+                <li>584,000 원</li>
+            </ul>
+            <button @click="accountBtnClick()">즉시구매 계속</button>
         </div>
     </div>
+
+
 </div>
 </template>
 
@@ -61,10 +78,9 @@
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
-import productHeader from '@/components/product/productHeader.vue'
+import header from '@/components/header.vue'
 import footer from '@/components/footer.vue'
 import productList from '@/components/product/productList.vue'
-import productSize from '@/components/product/productSize.vue'
 import {msgBoxNo, } from "@/assets/js/api.js";
 import { Table, TableColumn, Dialog, Input } from 'element-ui';
 
@@ -75,8 +91,7 @@ export default {
     "v-input": Input,
     "v-table-column": TableColumn,
     "productList" :productList,
-    "productSize" :productSize,
-    "productHeader-nav" : productHeader,
+    "header-nav" : header,
   },
 
   created() {
@@ -85,10 +100,11 @@ export default {
   },
 
   watch: {
-    // price: function(newVal) {
-    //     this.price = newVal.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    //     // return ( newVal === 0 ) ? "" : newVal.toLocaleString( "en-US" );
-    // }
+    price: function(newValue) {
+      const result = newValue.replace(/\D/g, "")
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      this.$nextTick(() => this.price = result);
+    }
   },
 
   computed: {
@@ -100,16 +116,13 @@ export default {
           this.datas = this.$route.params.product;
       },
 
-      handleChange(value) {
-        let vm = this;
-        let res = value.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        this.$set(this.form,'num',res);
-        
-      },
-
       priceButtonsTab(btn){
         this.btnidx = btn;
       },
+
+      accountBtnClick() {
+        this.$router.replace({name: "productDetail_completion", params: {product: this.datas} })
+      }
 
   },
 
@@ -120,6 +133,17 @@ export default {
         btnidx : 1,
         price : 0,
         priceButtons : ['판매입찰', '즉시판매'],
+        header : {
+            left : {
+                src : require("@/assets/resources/backspace.svg"),
+                action : "back"
+            },
+            right : {
+                src : require("@/assets/resources/header_info.svg"),
+                // action : null
+            },
+        }
+
       };
   },
 

@@ -49,7 +49,11 @@ export default {
   },
   methods: {
     footerRotuer(name,idx){
-      this.$router.push({path: `/${name}`})
+      this.$router.push({path: `/${name}`}).catch(error => {
+          if(error.name != "NavigationDuplicated" ){
+            throw error;
+          }
+        });
     }
   },
 }

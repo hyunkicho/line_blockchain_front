@@ -43,6 +43,7 @@
 .productAccount section:nth-child(1) .productPrices li:nth-child(2){
     color:#404750;
     margin-left: auto;
+    font-size:14px;
     font-weight: 500;
 }
 .productAccount section:nth-child(1) .productPrices li:nth-child(4){
@@ -81,6 +82,7 @@
 .productAccount section:nth-child(1) .priceInputWrap {
    display: flex;
    margin: 15px 20px 10px 20px;
+   padding-bottom:5px;
    border-bottom: 1px solid #dadae1;
 }
 .productAccount section:nth-child(1) .priceInputWrap .el-input__inner{
@@ -95,13 +97,55 @@
     line-height: 37px;
     margin-right: 9px;
     height:40px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 }
 
 
 .productAccount section:nth-child(1) .priceInputWrap span{
    line-height: 37px;
-   font-size:20px;
+   font-size:17px;
    font-weight: 600;
 }
+
+
+
+
+/* 섹션2 (배송지) */
+
+
+
+/* 섹션3 푸터 구매/판매 버튼 */
+.account_footer {
+    position: fixed;
+    bottom: 0;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+    max-width: 768px;
+    margin: auto;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 20px 0px 20px 0px;
+}
+.account_footer ul{
+    display: flex;
+    width: 90%;
+    margin:auto;
+}
+
+.account_footer li:nth-child(2){
+    margin-left:auto;
+    font-weight: 600;
+}
+
+.account_footer button{
+    border-radius: 50px;
+    border: none;
+    background: #167af9;
+    color: white;
+    width: 90%;
+    height: 50px;
+    margin: 15px 10px 0px 10px;
+}
+

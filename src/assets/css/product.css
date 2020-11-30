@@ -98,7 +98,8 @@
     height: 70px;
     background-color: white;
     line-height: 70px;
-    border-top: 1px solid #b5b5b5;
+
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
 }
 .salebtnWrap div{
     background-color: white;
@@ -139,7 +140,7 @@
     overflow: hidden;
 }
 .sizeDialog .el-dialog {
-    margin-top:40vh !important;
+    margin-top:35vh !important;
     width:100% !important;
     max-width: 768px;
     border-radius: 20px;

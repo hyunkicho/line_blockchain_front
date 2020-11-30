@@ -58,7 +58,11 @@ export default {
   },
   methods: {
     productClick(item){
-        this.$router.push({path: '/productDetail', query : {product:item.tag, gubun:item.gubun}})
+        this.$router.push({path: '/productDetail', query : {product:item.tag, gubun:item.gubun}}).catch(error => {
+          if(error.name != "NavigationDuplicated" ){
+            throw error;
+          }
+        });
     }
   },
 }

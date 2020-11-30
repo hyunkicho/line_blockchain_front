@@ -1,7 +1,7 @@
 <template>
 <div class="search">
     <div class="main-wrap">
-        <header-nav/>
+        <header-nav :header="header"/>
           <search-compo/>
         <footer-nav/>
     </div>
@@ -44,7 +44,19 @@ export default {
             name : 'profile',
             src : require("@/assets/resources/footer_profile.svg")
         },  
-      ]
+      ],
+
+      header : {
+          width : "80%",
+          left : {
+              src : require("@/assets/resources/blimit.svg"),
+              action : "index"
+          },
+          right : {
+              src : require("@/assets/resources/header_alram.svg"),
+              action : "alram"
+          },
+      }
     }
   },
   async created () {
