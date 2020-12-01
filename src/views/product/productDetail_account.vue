@@ -64,7 +64,7 @@
         <div class="account_footer">
             <ul>
                 <li>총 결제 금액</li>
-                <li>584,000 원</li>
+                <li>{{datas.productPrice}}</li>
             </ul>
             <button @click="accountBtnClick()">즉시구매 계속</button>
         </div>
