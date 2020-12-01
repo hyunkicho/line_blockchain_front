@@ -29,7 +29,7 @@
                 <div class="priceInputWrap">
                     <template>
                         <img src="@/assets/resources/pricesell.svg" alt="price">
-                        <v-input v-if="this.btnidx==0" v-model="price" placeholder="희망가 입력"></v-input>
+                        <v-input v-if="this.btnidx==0" v-model="price" placeholder="희망가 입력" @focus="focusOnMobile = true"  @blur="focusOnMobile = false"></v-input>
                         <div v-else>{{datas.productPrice}}</div><span>원</span>
                         <!-- <v-input v-model="price" type="number">{{datas.productPrice}}</v-input> -->
                         
@@ -61,7 +61,7 @@
             </section> -->
 
         </div>
-        <div class="account_footer">
+        <div class="account_footer" :class="{focusOnMobile}">
             <ul>
                 <li>총 결제 금액</li>
                 <li>{{datas.productPrice}}</li>
@@ -116,7 +116,6 @@ export default {
           this.datas = this.$route.params.product;
           this.fixSize = this.$route.params.fixSize;
       },
-
       priceButtonsTab(btn){
         this.btnidx = btn;
       },
@@ -134,6 +133,7 @@ export default {
         btnidx : 1,
         price : 0,
         fixSize : 0,
+        focusOnMobile : false,
         priceButtons : ['판매입찰', '즉시판매'],
         header : {
             left : {
@@ -180,5 +180,8 @@ border-bottom: 1px solid #EBEEF5;
 .el-table .cell {
     text-align: center;
     color:#404750
+}
+.focusOnMobile {
+    position: absolute
 }
 </style>
