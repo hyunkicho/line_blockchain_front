@@ -64,9 +64,9 @@
         <div class="account_footer" :class="{focusOnMobile}">
             <ul>
                 <li>총 결제 금액</li>
-                <li>{{datas.productPrice}}</li>
+                <li>{{datas.productPrice}}원</li>
             </ul>
-            <button @click="accountBtnClick()">즉시구매 계속</button>
+            <button @click="accountBtnClick()">즉시판매 계속</button>
         </div>
     </div>
 
@@ -107,10 +107,6 @@ export default {
     }
   },
 
-  computed: {
-      
-  },
-
   methods: {
       init(product,gubun) {
           this.datas = this.$route.params.product;
@@ -118,6 +114,9 @@ export default {
       },
       priceButtonsTab(btn){
         this.btnidx = btn;
+        if(btn == 1){
+            this.price = 0;
+        }
       },
 
       accountBtnClick() {
@@ -128,7 +127,6 @@ export default {
 
   data() {
     return {
-        form :{},
         datas : "",
         btnidx : 1,
         price : 0,

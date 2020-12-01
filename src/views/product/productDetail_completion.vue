@@ -1,8 +1,42 @@
 <template>
-<div class="productAccount">
+<div class="productCompletion">
     <div class="main-wrap">
         <header-nav :header="header"/>
-        {{productData}}
+        <!-- {{productData}} -->
+        <div class="section1">
+            <div>
+                <img :src="productData.src">
+            </div>
+            <ul>
+                <li>판매등록이 완료되었습니다.</li>
+                <li>검증을 위해 아래 주소로 상품을 보내주세요.</li>
+                <li>서울특별시 영등포구 63로 50</li>
+            </ul>
+            <button>상품을 기다리는 중입니다.</button>
+        </div>
+
+
+
+        <div class="section2 wrap-margin">
+            <ul>
+                <li>판매 희망가</li>
+                <li>574,000원</li>
+            </ul>
+            <ul>
+                <li>검수비</li>
+                <li>-</li>
+            </ul>
+            <ul>
+                <li>배송비</li>
+                <li>선불∙판매자 부담</li>
+            </ul>
+            <ul>
+                <li>예상 판매금액</li>
+                <li>574,000원</li>
+            </ul>
+        </div>
+
+        <!-- <img src="" alt=""> -->
         <!-- {{$route.params.product}} -->
 
     </div>
@@ -57,12 +91,13 @@ export default {
     return {
         productData : "",
         header : {
+            width:"80%",
             left : {
-                src : require("@/assets/resources/backspace.svg"),
-                action : "back"
+                src : require("@/assets/resources/blimit.svg"),
+                action : "index"
             },
             right : {
-                src : require("@/assets/resources/header_info.svg"),
+                src : require("@/assets/resources/close.svg"),
                 action : "close"
             },
         }
@@ -75,30 +110,73 @@ export default {
 
 
 <style>
-.VueCarousel-pagination {
-    position: absolute;
-    bottom:0px;
+/* 섹션1 */
+.section1 {
+    padding-bottom: 30px;
+    border-bottom: 2px solid #eceff5;
 }
-.VueCarousel-pagination button {
-    width : 60px !important; 
-    height:2px !important;
-    background-color: black !important;
+.section1 div{
+    background-color: #eceff5;
 }
-.VueCarousel-pagination .VueCarousel-dot--active {
-    background-color: #167af9 !important;
+.section1 div img{
+    width:70%;
 }
-.el-table tr:nth-child(1) th{
-border-bottom: 1px solid #EBEEF5;
+.section1 ul{
+    margin-top:30px;
 }
-.el-table td, .el-table th.is-leaf {
-    border-bottom:none;
+.section1 ul li{
+    font-size:16px;
+    line-height:25px;
 }
-.el-table th>.cell {
-    text-align: center;
-    color:#747f89
+.section1 li:nth-child(1){
+    font-size:17px;
+    font-weight:600;
+    padding-bottom:10px;
 }
-.el-table .cell {
-    text-align: center;
-    color:#404750
+.section1 li:nth-child(2){
+    color:#747f89;
+}
+.section1 li:nth-child(3){
+    color:#167af9;
+    font-weight: 500;
+}
+.section1 button{
+    color: #747f89;
+    width: 70%;
+    height: 50px;
+    margin: 30px 10px -5px 01px;
+    background: #eceff5;
+    border: none;
+    border-radius: 30px;
+}
+
+/* 섹션2 */
+.section2 {
+    margin-top:15px;
+}
+.section2 ul {
+    display:flex;
+    width:100%;
+    line-height: 30px;
+}
+.section2 ul li:nth-child(1) {
+    color: #747f89;
+}
+.section2 ul li:nth-child(2) {
+    color: #404750;
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: 500;
+}
+.section2 ul:nth-child(3) {
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eceff5;
+}
+.section2 ul:nth-child(4) {
+    padding-top: 15px;
+}
+.section2 ul:nth-child(4) li:nth-child(2){
+    font-size:17px;
+    font-weight: 600;
 }
 </style>
