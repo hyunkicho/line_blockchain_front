@@ -87,7 +87,7 @@
 }
 .productAccount section:nth-child(1) .priceInputWrap .el-input__inner{
    border: none;
-   font-size:18px;
+   font-size:16px;
    font-weight: 600;
    text-align: right;
    padding-right: 0px;

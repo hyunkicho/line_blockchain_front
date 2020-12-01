@@ -3,7 +3,7 @@
     <div class="main-wrap">
         <header-nav :header="header"/>
           <search-compo/>
-        <footer-nav/>
+        <footer-nav :footer="footer"/>
     </div>
 </div>
 </template>
@@ -27,25 +27,6 @@ export default {
   },
   data() {
     return {
-      footerData : [
-        { 
-            name : 'home',
-            src : require("@/assets/resources/footer_home.svg")
-        },  
-        { 
-            name : 'list',
-            src : require("@/assets/resources/footer_list.svg")
-        },  
-        { 
-            name : 'search',
-            src : require("@/assets/resources/footer_search.svg")
-        },  
-        { 
-            name : 'profile',
-            src : require("@/assets/resources/footer_profile.svg")
-        },  
-      ],
-
       header : {
           width : "80%",
           left : {
@@ -56,7 +37,27 @@ export default {
               src : require("@/assets/resources/header_alram.svg"),
               action : "alram"
           },
-      }
+      },
+
+      footer : [
+        { 
+            name : '',
+            src : require("@/assets/resources/footer_home.svg")
+        },  
+        { 
+            name : 'list',
+            src : require("@/assets/resources/footer_list.svg")
+        },  
+        { 
+            name : 'search',
+            src : require("@/assets/resources/footer_search_active.svg")
+        },  
+        { 
+            name : 'profile',
+            src : require("@/assets/resources/footer_profile.svg")
+        },  
+      ],
+
     }
   },
   async created () {

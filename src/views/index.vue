@@ -35,7 +35,7 @@
   </div>
 
 
-  <footer-nav/>
+  <footer-nav :footer="footer"/>
 </div>
 </template>
 
@@ -73,7 +73,26 @@ export default {
                 src : require("@/assets/resources/header_alram.svg"),
                 action : "alram"
             },
-        }
+        },
+        footer : [
+          { 
+              name : '',
+              src : require("@/assets/resources/footer_home_active.svg")
+          },  
+          { 
+              name : 'list',
+              src : require("@/assets/resources/footer_list.svg")
+          },  
+          { 
+              name : 'search',
+              src : require("@/assets/resources/footer_search.svg")
+          },  
+          { 
+              name : 'profile',
+              src : require("@/assets/resources/footer_profile.svg")
+          },  
+        ],
+
     }
   },
   methods: {

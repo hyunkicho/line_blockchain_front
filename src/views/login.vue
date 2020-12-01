@@ -8,19 +8,19 @@
     </div>
 
     <v-row :gutter="10">
-        <v-col :span="24">
-        <p :class="{focusOn : focusid}">아이디</p>
+        <v-col :span="24" :class="{focusOn : focusid}">
+        <p>아이디</p>
         <div class="grid-content bg-purple" @click="foucsEvent('id')">
-            <v-input ref="idRef" v-model="id" clearable></v-input>
+            <v-input ref="idRef" v-model="id" clearable prefix-icon="el-icon-user"></v-input>
         </div>
         </v-col>
     </v-row>
     
     <v-row :gutter="20">
-        <v-col :span="24">
-          <p :class="{focusOn : focuspw}">패스워드</p>
+        <v-col :span="24" :class="{focusOn : focuspw}">
+          <p >패스워드</p>
           <div class="grid-content bg-purple" @click="foucsEvent('pw')">
-              <v-input v-model="pw" type="password" clearable @keyup.enter.native="loginSubmit"></v-input>
+              <v-input v-model="pw" type="password" clearable @keyup.enter.native="loginSubmit" prefix-icon="el-icon-user-solid"></v-input>
           </div>
         </v-col>
         <!-- <v-col :span="12">
@@ -104,3 +104,44 @@ export default {
   },
 }
 </script>
+
+<style>
+.login .el-input--prefix .el-input__inner {
+  padding-left:55px;
+}
+.login .el-input__icon {
+  position: relative;
+  top:3px
+}
+.login .el-col p{
+  position: relative;
+  left: 10px;
+}
+
+.grid-content div input {
+  height:50px;
+}
+
+.el-icon-user:before {
+  content:url("../assets/resources/login_email.svg");
+  position: relative;
+  left:15px;
+}
+.el-icon-user-solid:before {
+  content:url("../assets/resources/login_password.svg");
+  position: relative;
+  left:15px;
+  top: 2px;
+}
+.focusOn .el-icon-user:before {
+  content:url("../assets/resources/login_email_focus.svg");
+  position: relative;
+  left:15px;
+}
+.focusOn .el-icon-user-solid:before {
+  content:url("../assets/resources/login_password_focus.svg");
+  position: relative;
+  left:15px;
+  top: 2px;
+}
+</style>

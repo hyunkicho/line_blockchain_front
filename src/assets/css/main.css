@@ -66,8 +66,9 @@
 .loginTop p{text-align: center; color:#747f89; font-size:14px;}
 
 
-.focusOn {
-    color : #404750 !important;
+.focusOn p{
+    color : #167af9 !important;
+    font-weight: 500;
 }
 
 .login .el-button {

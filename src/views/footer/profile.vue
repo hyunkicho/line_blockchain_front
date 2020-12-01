@@ -3,7 +3,7 @@
     <div class="main-wrap">
         <header-nav :header="header"/>
           Profile Page
-        <footer-nav/>
+        <footer-nav :footer="footer"/>
     </div>
 </div>
 </template>
@@ -25,9 +25,21 @@ export default {
   },
   data() {
     return {
-      footerData : [
+      header : {
+        width : "80%",
+        left : {
+            src : require("@/assets/resources/blimit.svg"),
+            action : "index"
+        },
+        right : {
+            src : require("@/assets/resources/header_alram.svg"),
+            action : "alram"
+        },
+      },
+      
+      footer : [
         { 
-            name : 'home',
+            name : '',
             src : require("@/assets/resources/footer_home.svg")
         },  
         { 
@@ -43,18 +55,6 @@ export default {
             src : require("@/assets/resources/footer_profile.svg")
         },  
       ],
-
-      header : {
-        width : "80%",
-        left : {
-            src : require("@/assets/resources/blimit.svg"),
-            action : "index"
-        },
-        right : {
-            src : require("@/assets/resources/header_alram.svg"),
-            action : "alram"
-        },
-      }
 
     }
   },

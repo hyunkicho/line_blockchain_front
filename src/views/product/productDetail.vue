@@ -149,7 +149,7 @@ export default {
               msgBoxNo("사이즈를 선택해주세요")
               this.dialogVisible = true;
           }else{
-              this.$router.replace({name: "productDetail_account", params: {product: this.productInfo[0]} })
+              this.$router.replace({name: "productDetail_account", params: {product: this.productInfo[0], fixSize:this.size} })
             //   this.$router.push({path: '/productDetail_account', query : {price:this.productInfo[0].productPrice, size:this.size}, params: {name: 'dog', age:4} })
           } 
       }

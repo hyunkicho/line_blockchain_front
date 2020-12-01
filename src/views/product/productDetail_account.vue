@@ -8,7 +8,7 @@
                     <img :src="datas.src">
                     <ul>
                         <li>Air Force 1 Low Peaceminusone Para-Noise</li>
-                        <li><span>사이즈</span> 250</li>
+                        <li><span>사이즈</span> {{this.fixSize}}</li>
                     </ul>
                 </div>
 
@@ -30,9 +30,9 @@
                     <template>
                         <img src="@/assets/resources/pricesell.svg" alt="price">
                         <v-input v-if="this.btnidx==0" v-model="price" placeholder="희망가 입력"></v-input>
-                        <div v-else>{{datas.productPrice}}</div>
+                        <div v-else>{{datas.productPrice}}</div><span>원</span>
                         <!-- <v-input v-model="price" type="number">{{datas.productPrice}}</v-input> -->
-                        <span>원</span>
+                        
                     </template>
                 </div>
 
@@ -114,6 +114,7 @@ export default {
   methods: {
       init(product,gubun) {
           this.datas = this.$route.params.product;
+          this.fixSize = this.$route.params.fixSize;
       },
 
       priceButtonsTab(btn){
@@ -132,6 +133,7 @@ export default {
         datas : "",
         btnidx : 1,
         price : 0,
+        fixSize : 0,
         priceButtons : ['판매입찰', '즉시판매'],
         header : {
             left : {

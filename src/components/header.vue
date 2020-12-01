@@ -35,7 +35,6 @@ export default {
     }
   },
   async created () {
-
   },
   methods: {
     leftClick(action) {
