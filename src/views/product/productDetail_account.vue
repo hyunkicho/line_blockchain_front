@@ -182,6 +182,7 @@ border-bottom: 1px solid #EBEEF5;
     color:#404750
 }
 .focusOnMobile {
-    position: absolute
+    display:none;
+    /* position: absolute */
 }
 </style>
