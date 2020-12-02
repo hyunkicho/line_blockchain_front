@@ -2,7 +2,7 @@
 <div class="productDetail">
     <div class="main-wrap">
         <header-nav :header="header" />
-            <carousel :per-page="1">
+            <carousel :per-page="1" >
                 <slide style="background:#eceff5">
                     <img :src="productInfo[0].src">
                 </slide>
@@ -203,13 +203,17 @@ export default {
 
 
 <style>
+.productDetail  .VueCarousel-slide img{ 
+    width : 60%;
+}
+
 .VueCarousel-pagination {
     position: absolute;
     bottom:0px;
 }
 .VueCarousel-pagination button {
     width : 60px !important; 
-    height:2px !important;
+    height:1px !important;
     background-color: black !important;
 }
 .VueCarousel-pagination .VueCarousel-dot--active {

@@ -120,7 +120,7 @@ export default {
       },
 
       accountBtnClick() {
-        this.$router.replace({name: "productDetail_completion", params: {product: this.datas} })
+        this.$router.replace({name: "productDetail_completion", params: {product: this.datas, fixSize:this.fixSize} })
       }
 
   },
@@ -158,15 +158,18 @@ export default {
     bottom:0px;
 }
 .VueCarousel-pagination button {
-    width : 60px !important; 
-    height:2px !important;
+    width : 100px !important; 
+    height:1px !important;
     background-color: black !important;
 }
 .VueCarousel-pagination .VueCarousel-dot--active {
     background-color: #167af9 !important;
 }
 .el-table tr:nth-child(1) th{
-border-bottom: 1px solid #EBEEF5;
+    border-bottom: 1px solid #EBEEF5;
+}
+.el-table tr:last-child td{
+    border-bottom: 0px;
 }
 .el-table td, .el-table th.is-leaf {
     border-bottom:none;

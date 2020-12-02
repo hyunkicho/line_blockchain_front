@@ -140,7 +140,7 @@
     overflow: hidden;
 }
 .sizeDialog .el-dialog {
-    margin-top:35vh !important;
+    margin-top:30vh !important;
     width:100% !important;
     max-width: 768px;
     border-radius: 20px;

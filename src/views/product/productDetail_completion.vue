@@ -15,12 +15,10 @@
             <button>상품을 기다리는 중입니다.</button>
         </div>
 
-
-
         <div class="section2 wrap-margin">
             <ul>
                 <li>판매 희망가</li>
-                <li>574,000원</li>
+                <li>{{productData.productPrice}}원</li>
             </ul>
             <ul>
                 <li>검수비</li>
@@ -32,7 +30,7 @@
             </ul>
             <ul>
                 <li>예상 판매금액</li>
-                <li>574,000원</li>
+                <li>{{productData.productPrice}}원</li>
             </ul>
         </div>
 
@@ -83,7 +81,10 @@ export default {
 
   methods: {
       init(product,gubun) {
-          this.productData = this.$route.params.product;
+          this.productData = JSON.parse(JSON.stringify(this.$route.params.product));
+          this.productData.size = this.$route.params.fixSize;
+
+          localStorage.setItem(this.$route.params.product.tag, JSON.stringify(this.productData));
       },
   },
 
@@ -91,9 +92,9 @@ export default {
     return {
         productData : "",
         header : {
-            width:"80%",
+            width:"100%",
             left : {
-                src : require("@/assets/resources/blimit.svg"),
+                src : require("@/assets/resources/completion.svg"),
                 action : "index"
             },
             right : {
@@ -123,6 +124,8 @@ export default {
 }
 .section1 ul{
     margin-top:30px;
+    display: flex;
+    flex-direction: column;
 }
 .section1 ul li{
     font-size:16px;

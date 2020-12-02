@@ -5,6 +5,7 @@ import Login from '../views/login.vue'
 import ProductDetail from '../views/product/productDetail.vue'
 import productDetail_account from '../views/product/productDetail_account.vue'
 import productDetail_completion from '../views/product/productDetail_completion.vue'
+import productDetail_cert from '../views/product/productDetail_cert.vue'
 import List from '../views/footer/list.vue'
 import Search from '../views/footer/search.vue'
 import Profile from '../views/footer/profile.vue'
@@ -39,6 +40,11 @@ const routes = [
     path: '/productdetail_completion',
     name: 'productDetail_completion',
     component: productDetail_completion,
+  },
+  {
+    path: '/productdetail_cert',
+    name: 'productDetail_cert',
+    component: productDetail_cert,
   },
   {
     path: '/list',

@@ -3,7 +3,22 @@
 
   <header-nav :header="header"/>
   <div class="main-wrap">
-      <div>
+      <div v-for="(item,idx) in alramItem" :key="idx" @click="alramClick(alramItem[idx])">
+        <ul style="background:#f9faff">
+          <li><img src="@/assets/resources/alram_left.svg" alt=""></li>
+          <li>
+            <dl>
+              <dt>상품 검증 완료!</dt>
+              <dd>{{alramItem[idx].productDesc}} 검증서를 확인하세요!</dd>
+            </dl>
+          </li>
+          <li>
+            <img :src="alramItem[idx].src" alt="">
+            <!-- <img src="@/assets/resources/slide_product1.png" alt=""> -->
+          </li>
+        </ul>
+      </div>
+      <!-- <div v-for="(item,idx) in alramItem" :key="idx" @click="alramClick">
         <ul style="background:#f9faff">
           <li><img src="@/assets/resources/alram_left.svg" alt=""></li>
           <li>
@@ -16,91 +31,8 @@
             <img src="@/assets/resources/slide_product1.png" alt="">
           </li>
         </ul>
-      </div>
-      <div>
-        <ul>
-          <li><img src="@/assets/resources/alram_left.svg" alt=""></li>
-          <li>
-            <dl>
-              <dt>새로운 즉시 구매가</dt>
-              <dd>Check Pattern slim fit pants 즉시 구매가를 확인하세요!</dd>
-            </dl>
-          </li>
-          <li>
-            <img src="@/assets/resources/slide_product1.png" alt="">
-          </li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <li><img src="@/assets/resources/alram_left.svg" alt=""></li>
-          <li>
-            <dl>
-              <dt>새로운 즉시 구매가</dt>
-              <dd>Check Pattern slim fit pants 즉시 구매가를 확인하세요!</dd>
-            </dl>
-          </li>
-          <li>
-            <img src="@/assets/resources/slide_product1.png" alt="">
-          </li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <li><img src="@/assets/resources/alram_left.svg" alt=""></li>
-          <li>
-            <dl>
-              <dt>새로운 즉시 구매가</dt>
-              <dd>Check Pattern slim fit pants 즉시 구매가를 확인하세요!</dd>
-            </dl>
-          </li>
-          <li>
-            <img src="@/assets/resources/slide_product1.png" alt="">
-          </li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <li><img src="@/assets/resources/alram_left.svg" alt=""></li>
-          <li>
-            <dl>
-              <dt>새로운 즉시 구매가</dt>
-              <dd>Check Pattern slim fit pants 즉시 구매가를 확인하세요!</dd>
-            </dl>
-          </li>
-          <li>
-            <img src="@/assets/resources/slide_product1.png" alt="">
-          </li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <li><img src="@/assets/resources/alram_left.svg" alt=""></li>
-          <li>
-            <dl>
-              <dt>새로운 즉시 구매가</dt>
-              <dd>Check Pattern slim fit pants 즉시 구매가를 확인하세요!</dd>
-            </dl>
-          </li>
-          <li>
-            <img src="@/assets/resources/slide_product1.png" alt="">
-          </li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <li><img src="@/assets/resources/alram_left.svg" alt=""></li>
-          <li>
-            <dl>
-              <dt>새로운 즉시 구매가</dt>
-              <dd>Check Pattern slim fit pants 즉시 구매가를 확인하세요!</dd>
-            </dl>
-          </li>
-          <li>
-            <img src="@/assets/resources/slide_product1.png" alt="">
-          </li>
-        </ul>
-      </div>
+      </div> -->
+
       
 
   </div>
@@ -116,7 +48,6 @@ import { Row, Col } from 'element-ui';
 /* custom */
 import header from '@/components/header.vue'
 import footer from '@/components/footer.vue'
-import productList from '@/components/product/productList.vue'
 import axios from "axios";
 
 export default {
@@ -124,10 +55,12 @@ export default {
   components: {
     "header-nav" : header,
     "footer-nav" : footer,
-    "productList" :productList,
   },
   data() {
     return {
+        alramAll: [],
+        alramItem : [],
+
         header : {
             width : "123%",
             left : {
@@ -142,8 +75,34 @@ export default {
 
     }
   },
+  created() {
+    this.init();
+  },
   methods: {
+    init(){
 
+      if (localStorage.length > 0) {
+        for (let i = 0; i < localStorage.length; i++) {
+          if (localStorage.key(i) != "loglevel:webpack-dev-server")
+            this.alramItem.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+        }
+      }
+
+     
+
+      // if (localStorage.length > 0) {
+      //   for (let i = 0; i < localStorage.length; i++) {
+      //     if (localStorage.key(i) != "loglevel:webpack-dev-server")
+      //       this.alramItem.push(localStorage.key(i));
+      //       this.alramAll.push(localStorage)
+      //   }
+      // }
+      // console.log(this.alramItem, 'tt->', this.alramAll)
+    },
+
+    alramClick(item){
+      this.$router.replace({name: "productDetail_cert", params: {product: item} })
+    },
   },
 
 }
