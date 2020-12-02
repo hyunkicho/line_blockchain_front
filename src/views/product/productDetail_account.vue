@@ -83,6 +83,8 @@ import footer from '@/components/footer.vue'
 import productList from '@/components/product/productList.vue'
 import {msgBoxNo, } from "@/assets/js/api.js";
 import { Table, TableColumn, Dialog, Input } from 'element-ui';
+import axios from "axios";
+import {request} from "@/assets/js/apps.js";
 
 export default {
   components: {
@@ -119,9 +121,13 @@ export default {
         }
       },
 
-      accountBtnClick() {
+      async accountBtnClick() {
         this.$router.replace({name: "productDetail_completion", params: {product: this.datas, fixSize:this.fixSize} })
-      }
+
+        const nft1 = await request.post("/api/transfer_nft")
+        const nft2 = await request.post("/api/transfer_nft2")
+      },
+
 
   },
 

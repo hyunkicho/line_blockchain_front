@@ -80,12 +80,12 @@ export default {
   },
 
   methods: {
-      init(product,gubun) {
-          this.productData = JSON.parse(JSON.stringify(this.$route.params.product));
-          this.productData.size = this.$route.params.fixSize;
+    init(product,gubun) {
+        this.productData = JSON.parse(JSON.stringify(this.$route.params.product));
+        this.productData.size = this.$route.params.fixSize;
 
-          localStorage.setItem(this.$route.params.product.tag, JSON.stringify(this.productData));
-      },
+        localStorage.setItem(this.$route.params.product.tag, JSON.stringify(this.productData));
+    },
   },
 
   data() {

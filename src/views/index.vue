@@ -48,6 +48,7 @@ import footer from '@/components/footer.vue'
 import productList from '@/components/product/productList.vue'
 import axios from "axios";
 import {Carousel, Slide} from 'vue-carousel';
+// import {apps} from "@/assets/js/apps.js";
 
 export default {
   name: 'Main',
