@@ -51,7 +51,7 @@ export default {
             src : require("@/assets/resources/footer_search.svg")
         },  
         { 
-            name : 'profile',
+            name : 'mypage',
             src : require("@/assets/resources/footer_profile.svg")
         },  
       ],

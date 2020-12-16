@@ -58,6 +58,7 @@ color: #42b983;
 
 .header ul li:nth-child(2){
     margin-left:auto;
+    padding-right: 10px;
 }
 
 /* 푸터 관련*/

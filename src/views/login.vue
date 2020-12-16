@@ -96,7 +96,6 @@ export default {
         this.focusid = true;
         this.focuspw = false;
       }else{
-        console.log('pw')
         this.focusid = false;
         this.focuspw = true;
       }

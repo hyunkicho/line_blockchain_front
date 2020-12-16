@@ -111,6 +111,10 @@ export default {
 
 
 <style>
+.productCompletion .header ul li:nth-child(1) img {
+    padding-left:10px;
+}
+
 /* 섹션1 */
 .section1 {
     padding-bottom: 30px;

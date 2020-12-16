@@ -4,6 +4,10 @@
 }
 
 /* 섹션1 상품 가격정보 */
+.productDetail .header ul li:nth-child(1) img {
+    padding-left:10px;
+}
+
 .productDetail .descr section:nth-child(1) {
     padding-bottom:25px;
     border-bottom:1px solid #dadae1;
