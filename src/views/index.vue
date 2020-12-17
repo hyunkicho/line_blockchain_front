@@ -2,7 +2,7 @@
 <div>
 
   <div class="main-wrap">
-    <header-nav/>
+    <header-nav :header="header"/>
 
     <carousel :per-page="1">
       <slide>
@@ -35,7 +35,7 @@
   </div>
 
 
-  <footer-nav/>
+  <footer-nav :footer="footer"/>
 </div>
 </template>
 
@@ -48,6 +48,7 @@ import footer from '@/components/footer.vue'
 import productList from '@/components/product/productList.vue'
 import axios from "axios";
 import {Carousel, Slide} from 'vue-carousel';
+// import {apps} from "@/assets/js/apps.js";
 
 export default {
   name: 'Main',
@@ -63,12 +64,45 @@ export default {
   },
   data() {
     return {
+        header : {
+            width:"80%",
+            left : {
+                src : require("@/assets/resources/blimit.svg"),
+                action : "index"
+            },
+            right : {
+                src : require("@/assets/resources/header_alram.svg"),
+                action : "alram"
+            },
+        },
+        footer : [
+          { 
+              name : '',
+              src : require("@/assets/resources/footer_home_active.svg")
+          },  
+          { 
+              name : 'list',
+              src : require("@/assets/resources/footer_list.svg")
+          },  
+          { 
+              name : 'search',
+              src : require("@/assets/resources/footer_search.svg")
+          },  
+          { 
+              name : 'mypage',
+              src : require("@/assets/resources/footer_profile.svg")
+          },  
+        ],
 
     }
   },
   methods: {
     plusRouter(){
-       this.$router.push({path: '/search'})
+       this.$router.push({path: '/search'}).catch(error => {
+          if(error.name != "NavigationDuplicated" ){
+            throw error;
+          }
+        });
     },
 
     corsRequest() {

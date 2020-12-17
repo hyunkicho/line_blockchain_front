@@ -1,14 +1,14 @@
 <template>
 <div class="productAccount">
     <div class="main-wrap">
-        <productHeader-nav/>
+        <header-nav :header="header"/>
         <div>
             <section>
                 <div class="productInfoWrap">
                     <img :src="datas.src">
                     <ul>
                         <li>Air Force 1 Low Peaceminusone Para-Noise</li>
-                        <li><span>사이즈</span> 250</li>
+                        <li><span>사이즈</span> {{this.fixSize}}</li>
                     </ul>
                 </div>
 
@@ -29,10 +29,10 @@
                 <div class="priceInputWrap">
                     <template>
                         <img src="@/assets/resources/pricesell.svg" alt="price">
-                        <v-input v-if="this.btnidx==0" v-model="form.num" @change="handleChange" placeholder="희망가 입력"></v-input>
-                        <div v-else>{{datas.productPrice}}</div>
+                        <v-input v-if="this.btnidx==0" v-model="price" placeholder="희망가 입력" @focus="focusOnMobile = true"  @blur="focusOnMobile = false"></v-input>
+                        <div v-else>{{datas.productPrice}}</div><span>원</span>
                         <!-- <v-input v-model="price" type="number">{{datas.productPrice}}</v-input> -->
-                        <span>원</span>
+                        
                     </template>
                 </div>
 
@@ -43,17 +43,34 @@
                     </ul>
                     <ul>
                         <li>배송비</li>
-                        <li  v-if="this.btnidx==0">선불∙판매자 부담</li>
-                        <li  v-else style="color:#b0b0b0">-</li>
+                        <li v-if="this.btnidx==0">선불∙판매자 부담</li>
+                        <li v-else style="color:#b0b0b0">-</li>
                     </ul>
                 </div>
             </section>
 
-            <section>
-                
-            </section>
+            <!-- <section>
+                <ul>
+                    <li>판매 정산 계좌</li>
+                    <li>국민은행 </li>
+                </ul>
+                <ul>
+                    <li>반송 주소</li>
+                    <li>주소테스트</li>
+                </ul>
+            </section> -->
+
+        </div>
+        <div class="account_footer" :class="{focusOnMobile}">
+            <ul>
+                <li>총 결제 금액</li>
+                <li>{{datas.productPrice}}원</li>
+            </ul>
+            <button @click="accountBtnClick()">즉시판매 계속</button>
         </div>
     </div>
+
+
 </div>
 </template>
 
@@ -61,12 +78,13 @@
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
-import productHeader from '@/components/product/productHeader.vue'
+import header from '@/components/header.vue'
 import footer from '@/components/footer.vue'
 import productList from '@/components/product/productList.vue'
-import productSize from '@/components/product/productSize.vue'
 import {msgBoxNo, } from "@/assets/js/api.js";
 import { Table, TableColumn, Dialog, Input } from 'element-ui';
+import axios from "axios";
+import {request} from "@/assets/js/apps.js";
 
 export default {
   components: {
@@ -75,8 +93,7 @@ export default {
     "v-input": Input,
     "v-table-column": TableColumn,
     "productList" :productList,
-    "productSize" :productSize,
-    "productHeader-nav" : productHeader,
+    "header-nav" : header,
   },
 
   created() {
@@ -85,41 +102,54 @@ export default {
   },
 
   watch: {
-    // price: function(newVal) {
-    //     this.price = newVal.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    //     // return ( newVal === 0 ) ? "" : newVal.toLocaleString( "en-US" );
-    // }
-  },
-
-  computed: {
-      
+    price: function(newValue) {
+      const result = newValue.replace(/\D/g, "")
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      this.$nextTick(() => this.price = result);
+    }
   },
 
   methods: {
       init(product,gubun) {
           this.datas = this.$route.params.product;
+          this.fixSize = this.$route.params.fixSize;
       },
-
-      handleChange(value) {
-        let vm = this;
-        let res = value.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        this.$set(this.form,'num',res);
-        
-      },
-
       priceButtonsTab(btn){
         this.btnidx = btn;
+        if(btn == 1){
+            this.price = 0;
+        }
       },
+
+      async accountBtnClick() {
+        this.$router.replace({name: "productDetail_completion", params: {product: this.datas, fixSize:this.fixSize} })
+
+        const nft1 = await request.post("/api/transfer_nft")
+        const nft2 = await request.post("/api/transfer_nft2")
+      },
+
 
   },
 
   data() {
     return {
-        form :{},
         datas : "",
         btnidx : 1,
         price : 0,
+        fixSize : 0,
+        focusOnMobile : false,
         priceButtons : ['판매입찰', '즉시판매'],
+        header : {
+            left : {
+                src : require("@/assets/resources/backspace.svg"),
+                action : "back"
+            },
+            right : {
+                src : require("@/assets/resources/header_info.svg"),
+                // action : null
+            },
+        }
+
       };
   },
 
@@ -134,15 +164,18 @@ export default {
     bottom:0px;
 }
 .VueCarousel-pagination button {
-    width : 60px !important; 
-    height:2px !important;
+    width : 100px !important; 
+    height:1px !important;
     background-color: black !important;
 }
 .VueCarousel-pagination .VueCarousel-dot--active {
     background-color: #167af9 !important;
 }
 .el-table tr:nth-child(1) th{
-border-bottom: 1px solid #EBEEF5;
+    border-bottom: 1px solid #EBEEF5;
+}
+.el-table tr:last-child td{
+    border-bottom: 0px;
 }
 .el-table td, .el-table th.is-leaf {
     border-bottom:none;
@@ -154,5 +187,9 @@ border-bottom: 1px solid #EBEEF5;
 .el-table .cell {
     text-align: center;
     color:#404750
+}
+.focusOnMobile {
+    display:none;
+    /* position: absolute */
 }
 </style>

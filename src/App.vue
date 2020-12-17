@@ -19,7 +19,7 @@ import "@/assets/css/product_account.css";
 import "@/assets/css/search.css";
 import 'element-ui/lib/theme-chalk/index.css';
 // import apps from "@/assets/js/apps.js";
-// import api from "@/assets/js/api.js";
+import {api} from "@/assets/js/api.js";
 
 export default {
   components: {

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46" height="31" viewBox="0 0 46 31">
+    <g transform="translate(-128 -222)">
+        <rect width="46" height="31" fill="#eceff5" rx="15.5" transform="translate(128 222)"/>
+        <text fill="#747f89" font-family="NotoSansKR-Regular, Noto Sans KR" font-size="12px" letter-spacing="-0.005em" transform="translate(140 243)">
+            <tspan x="0" y="0">편집</tspan>
+        </text>
+    </g>
+</svg>
