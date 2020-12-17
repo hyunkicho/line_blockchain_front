@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <div class="to_step_btn">
+            <div class="to_step_btn" :class="{focusOnMobile}">
                 <router-link to="/inspect_step3">
                     <button>다음 단계</button>
                 </router-link>

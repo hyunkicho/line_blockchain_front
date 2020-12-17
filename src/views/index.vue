@@ -48,6 +48,7 @@ import footer from '@/components/footer.vue'
 import productList from '@/components/product/productList.vue'
 import axios from "axios";
 import {Carousel, Slide} from 'vue-carousel';
+import {request} from "@/assets/js/apps.js";
 // import {apps} from "@/assets/js/apps.js";
 
 export default {
@@ -105,14 +106,19 @@ export default {
         });
     },
 
-    corsRequest() {
-      axios.get("/api/getList")
-      .then((res) => {
-        console.log('corsRequest res', res)
-      })
-      .catch((error) => {
-        console.log('corsRequest error', error)
-      })
+   async corsRequest() {
+    //  let mint_nft1 = await request.get("/api/mint_nft");
+    //  let mint_nft2 = await request.get("/api/mint_nft2");
+
+    //  console.log(mint_nft1,mint_nft2)
+
+      // axios.get("/api/getList")
+      // .then((res) => {
+      //   // console.log('corsRequest res', res)
+      // })
+      // .catch((error) => {
+      //   // console.log('corsRequest error', error)
+      // })
     },
   },
   created() {

@@ -52,6 +52,7 @@ import footer from '@/components/footer.vue'
 import productList from '@/components/product/productList.vue'
 import {msgBoxNo, } from "@/assets/js/api.js";
 import { Table, TableColumn, Dialog, Input } from 'element-ui';
+import {request} from "@/assets/js/apps.js";
 
 export default {
   components: {
@@ -80,9 +81,11 @@ export default {
   },
 
   methods: {
-    init(product,gubun) {
+    async init(product,gubun) {
         this.productData = JSON.parse(JSON.stringify(this.$route.params.product));
         this.productData.size = this.$route.params.fixSize;
+        let mint_nft = await request.get("/api/mint_nft/");
+        this.productData.txHash = mint_nft.txHash;
 
         localStorage.setItem(this.$route.params.product.tag, JSON.stringify(this.productData));
     },

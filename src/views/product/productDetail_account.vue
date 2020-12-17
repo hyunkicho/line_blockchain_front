@@ -123,9 +123,8 @@ export default {
 
       async accountBtnClick() {
         this.$router.replace({name: "productDetail_completion", params: {product: this.datas, fixSize:this.fixSize} })
-
-        const nft1 = await request.post("/api/transfer_nft")
-        const nft2 = await request.post("/api/transfer_nft2")
+        // const nft1 = await request.post("/api/transfer_nft")
+        // const nft2 = await request.post("/api/transfer_nft2")
       },
 
 

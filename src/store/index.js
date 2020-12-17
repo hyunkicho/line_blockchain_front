@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    user_id : null,
     newItem : [
         {
             gubun : 'newItem',
@@ -211,10 +211,10 @@ export default new Vuex.Store({
             }
         },
     ]
-
-
   },
   mutations: {
+
+
   },
   actions: {
   },

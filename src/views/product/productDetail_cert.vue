@@ -25,11 +25,13 @@
                     <li><img src="@/assets/resources/cert_logo.svg" alt=""></li>
                 </ul>
                 <ul>
-                    <li><span>검수일자</span>  <span>2020.12.01</span></li>
-                    <li><span>검수자</span>  <span>Charlotte</span></li>
+                    <li><span>검수일자</span>  <span>{{time}}</span></li>
+                    <li><span>검수자</span>  <span>조현기</span></li>
                 </ul>
             </div>
-            <button>검수내역 보기</button>
+            <a :href="'https://explorer.blockchain.line.me/cashew/transaction/' +certData.txHash" target="_blank">
+                <button>검수내역 보기</button>
+            </a>
         </section>
 
     </div>
@@ -46,6 +48,7 @@ import header from '@/components/header.vue'
 import footer from '@/components/footer.vue'
 import {msgBoxNo, } from "@/assets/js/api.js";
 import { Table, TableColumn, Dialog, Input } from 'element-ui';
+import {request} from "@/assets/js/apps.js";
 
 export default {
   components: {
@@ -56,30 +59,29 @@ export default {
     "header-nav" : header,
   },
 
-  created() {
+  mounted() {
       this.certData = this.$route.params.product
-    //   this.init()
+      this.init()
     // this.init(this.$route.query.product, this.$route.query.gubun)
   },
 
-  watch: {
-    // price: function(newVal) {
-    //     this.price = newVal.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    //     // return ( newVal === 0 ) ? "" : newVal.toLocaleString( "en-US" );
-    // }
-  },
-
-  computed: {
-      
-  },
+  
 
   methods: {
-    init(product,gubun) {
+    async init() {
+        let product_nft = await request.get("/api/retreive_product_nft");
+        let d = new Date(product_nft.createdAt)
+        let time = d.getFullYear() + "." + d.getMonth() + "." + d.getDay()
+
+        this.time = time;
+        this.tokenIndex = product_nft.tokenIndex;
     },
   },
 
   data() {
     return {
+        time : "",
+        tokenIndex : "",
         certData : "",
         header : {
             width:"100%",
@@ -101,11 +103,14 @@ export default {
 
 
 <style>
+.productCert .main-wrap {
+    padding-bottom: 0px;
+}
 .productCert .cert_img_wrap {
     position: relative;
     left: 0px;
     right: 0px;
-    z-index: 10;
+    z-index: 1;
     max-width: 768px;
     margin: auto;
 }
@@ -148,15 +153,12 @@ export default {
 
 /* 섹션2 */
 .productCert section:nth-child(2){
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 180px;
+    height: 172px;
     width: 100%;
     background: #f9faff;
     max-width: 768px;
     margin: auto;
+    padding-top: 5px;
 }
 
 .productCert section:nth-child(2)>div{
