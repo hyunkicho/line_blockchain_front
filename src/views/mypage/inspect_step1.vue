@@ -14,17 +14,17 @@
             <div class="step_input_wrap">
                 <div>
                     <p>이름</p>
-                    <v-input ref="idRef" placeholder="이름을 입력하세요." v-model="name" clearable></v-input>
+                    <v-input placeholder="이름을 입력하세요." v-model="name" clearable></v-input>
                 </div>
                 <div>
                     <p>이메일</p>
-                    <v-input ref="idRef" placeholder="email@example.com" v-model="email" clearable></v-input>
+                    <v-input placeholder="email@example.com" v-model="email" clearable></v-input>
                 </div>
-                <div>
+                <div class="cert_upload">
                     <p>인증서류</p>
-                    <v-input ref="idRef" placeholder="첨부할 파일을 선택해주세요." v-model="files" clearable></v-input>
+                    <v-input placeholder="첨부할 파일을 선택해주세요." v-model="files" readonly clearable suffix-icon="upload_ico"></v-input>
+                    
                 </div>
-                
             </div>
 
             <div class="to_step_btn">
@@ -67,7 +67,7 @@ export default {
     return {
         name : "",
         email : "",
-        files : "",
+        files : "Related_certificate.pdf",
         header : {
             left : {
                 src : require("@/assets/resources/backspace.svg"),
@@ -151,6 +151,14 @@ export default {
    .step_input_wrap div input:hover{
        border-color: #167af9;
 
+    }
+
+    .upload_ico::after {
+        content: url("../../assets/resources/upload_icon.svg");
+        display: block;
+        padding-right: 25px;
+        position: relative;
+        top: 5px;
     }
 
     /* btn */
