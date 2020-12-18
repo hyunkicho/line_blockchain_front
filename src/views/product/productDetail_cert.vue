@@ -26,7 +26,7 @@
                 </ul>
                 <ul>
                     <li><span>검수일자</span>  <span>{{time}}</span></li>
-                    <li><span>검수자</span>  <span>조현기</span></li>
+                    <li><span>검수자</span>  <span>Chohyunki</span></li>
                 </ul>
             </div>
             <a :href="'https://explorer.blockchain.line.me/cashew/transaction/' +certData.txHash" target="_blank">

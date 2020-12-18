@@ -101,7 +101,7 @@ import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import header from '@/components/header.vue'
 import footer from '@/components/footer.vue'
 import productList from '@/components/product/productList.vue'
-import {msgBoxNo} from "@/assets/js/api.js";
+import {msgBoxNo,numberWithCommas} from "@/assets/js/api.js";
 import {Carousel, Slide} from 'vue-carousel';
 import { Table, TableColumn, Dialog } from 'element-ui';
 
@@ -131,6 +131,8 @@ export default {
           })
           this.sizesKey = Object.keys(this.productInfo[0].size)
           this.sizesPrice = Object.values(this.productInfo[0].size)
+          numberWithCommas(this.sizesPrice)
+          
       },
 
       sizeBtnClick(idx,size){
@@ -173,15 +175,15 @@ export default {
           }, {
             count: '1',
             size: '275',
-            sell: '490,000원'
+            sell: '460,000원'
           }, {
             count: '1',
             size: '275',
-            sell: '490,000원'
+            sell: '440,000원'
           }, {
             count: '1',
             size: '275',
-            sell: '490,000원'
+            sell: '460,000원'
         }],
 
         header : {

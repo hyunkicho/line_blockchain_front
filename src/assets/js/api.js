@@ -40,9 +40,16 @@ function numberComma(x) {
   $("#money").val(x.replace(/\B(?=(\d{3})+(?!\d))/g, ",")); // 정규식을 이용해서 3자리 마다 , 추가 
 }
 
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
 export {
   msgBoxYesorNo,
   msgBoxNo,
   numberComma,
+  numberWithCommas
   // routerReplace
 };

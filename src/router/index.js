@@ -4,6 +4,7 @@ import Index from '../views/index.vue'
 import Login from '../views/login.vue'
 import ProductDetail from '../views/product/productDetail.vue'
 import productDetail_account from '../views/product/productDetail_account.vue'
+import productDetail_inspect from '../views/product/productDetail_inspect.vue'
 import productDetail_completion from '../views/product/productDetail_completion.vue'
 import productDetail_cert from '../views/product/productDetail_cert.vue'
 import Inspect_step1 from '../views/mypage/inspect_step1.vue'
@@ -42,6 +43,11 @@ const routes = [
     path: '/productdetail_account',
     name: 'productDetail_account',
     component: productDetail_account,
+  },
+  {
+    path: '/productDetail_inspect',
+    name: 'productDetail_inspect',
+    component: productDetail_inspect,
   },
   {
     path: '/productdetail_completion',

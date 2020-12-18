@@ -12,7 +12,7 @@ export default new Vuex.Store({
             productName : "Jordan",
             tag : "jordan",
             productDesc : "Air Jordan 1 Retro High OG Turbo Green",
-            productPrice : "623,000원",
+            productPrice : "1,623,000원",
             src : require("@/assets/resources/slide_product1.png"),
             size : {
                 "250" : "1,622,000",

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="13.063" height="16.757" viewBox="0 0 13.063 16.757">
+    <defs>
+        <style>
+            .cls-3{fill:#cb943c}.cls-4{fill:#d9b352}
+        </style>
+    </defs>
+    <g id="medal_1_" transform="translate(-56)">
+        <path id="패스_85" fill="#0053bc" d="M203.6 5.72L206.942 0h4.852l-3.342 5.72z" transform="translate(-142.731)"/>
+        <path id="패스_86" fill="#1679f7" d="M56 0l3.342 5.72h4.852L60.852 0z"/>
+        <circle id="타원_32" cx="6.165" cy="6.165" r="6.165" class="cls-3" transform="translate(56.366 4.427)"/>
+        <circle id="타원_33" cx="4.872" cy="4.872" r="4.872" class="cls-4" transform="translate(57.659 5.72)"/>
+        <path id="패스_89" d="M3.688 0A3.688 3.688 0 1 1 0 3.688 3.688 3.688 0 0 1 3.688 0z" class="cls-3" transform="translate(58.843 6.904)"/>
+        <path id="패스_87" d="M174.028 242.4l.844 1.709 1.884.274-1.362 1.329.32 1.88-1.686-.887-1.686.887.32-1.88-1.362-1.329 1.884-.274z" class="cls-4" transform="translate(-111.497 -234.404)"/>
+    </g>
+</svg>

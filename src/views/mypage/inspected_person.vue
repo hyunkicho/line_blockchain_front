@@ -176,6 +176,9 @@ export default {
     padding-bottom: 10px;
     border-bottom: 2px solid #167af9;
     }
+    .person_descr div ul li:nth-child(2) a{
+      color: white;
+    }
 
   .person_descr div p{
     color :#747f89;
