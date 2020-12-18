@@ -105,7 +105,7 @@ export default {
   methods: {
     init() {
       if(localStorage.mypage) {
-        this.inspected = true
+        this.inspected = true;        
       }
     }
   },

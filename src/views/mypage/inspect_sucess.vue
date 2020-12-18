@@ -22,6 +22,7 @@ import header from '@/components/header.vue'
 import footer from '@/components/footer.vue'
 // import inspect_step1 from '@/components/product/inspect_step1.vue'
 import {msgBoxNo} from "@/assets/js/api.js";
+import {request} from "@/assets/js/apps.js";
 import { Table, TableColumn, Dialog, Input, Checkbox, CheckboxGroup } from 'element-ui';
 
 export default {
@@ -38,8 +39,10 @@ export default {
   },
 
   methods: {
-      routerClick(){
-        localStorage.setItem('mypage', "inspect")
+      async routerClick(){
+        let vali_mint = await request.post("/validator_nft/mint");
+        localStorage.setItem('mypage', vali_mint.txHash);
+
         this.$router.replace('/')
       }
   },

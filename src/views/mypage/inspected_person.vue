@@ -20,7 +20,9 @@
               </p>
               <div class="person_info_btns">
                 <button>검증자 정보보기</button>
-                <button>검증자 이력보기</button>
+                <a :href="'https://explorer.blockchain.line.me/cashew/transaction/' +this.txHash" target="_blank">
+                  <button>검증자 이력보기</button>
+                </a>
               </div>
 
             </div>
@@ -50,6 +52,7 @@ export default {
   },
   data() {
     return {
+      txHash: "",
       inspected : false,
       header : {
         width : "100%",
@@ -90,7 +93,8 @@ export default {
   methods: {
     init() {
       if(localStorage.mypage) {
-        this.inspected = true
+        this.inspected = true;
+        this.txHash = localStorage.getItem("mypage")
       }
     }
   },
@@ -179,7 +183,7 @@ export default {
     background-color: #404750;
     margin-right: 13px;
   }
-  .person_info_btns button:nth-child(2){
+  .person_info_btns a:nth-child(2) button{
     background-color: #167af9;
     /* margin-right: 15px; */
   }
