@@ -11,7 +11,11 @@
             <div>
               <ul>
                 <li>Charlotte</li>
-                <li>인증 상태</li>
+                  <li>
+                    <router-link router-link to="/inspected_person_level">
+                      <span>Gold</span>
+                    </router-link>
+                  </li>
               </ul>
 
               <p>
@@ -31,7 +35,7 @@
 
           </section>
 
-        <footer-nav :footer="footer"/>
+        <!-- <footer-nav :footer="footer"/> -->
     </div>
 </div>
 </template>
@@ -124,14 +128,13 @@ export default {
 
 
   .person_descr {
+    max-width: 768px;
     width: 100%;
-    height: 270px;
+    height: 260px;
     border-radius: 18px;
     background: white;
     display: block;
     position: absolute;
-    /* top: -25px; */
-    /* padding-top: 14%; */
     bottom: 0;
   }
 
@@ -156,15 +159,23 @@ export default {
 
   }
   .person_descr div ul li:nth-child(2){
-    color:#747f89;
-    margin-left:auto;
-    font-size:14px;
+    color: #747f89;
+    margin-left: auto;
+    font-size: 14px;
+    padding-bottom: 10px;
+    border-bottom: solid 2px #d6e3f6;
   }
-  .person_descr div ul li:nth-child(2)::before{
-    content: url("../../assets/resources/inspected_person_chk.svg");
+  .person_descr div ul li:nth-child(2)::after{
+    content: url("../../assets/resources/medal_gold.svg");
     vertical-align: middle;
-    padding-left:5px;
+    padding-left:13px;
   }
+    .person_descr div ul li:nth-child(2) span{
+    color:#167af9;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #167af9;
+    }
 
   .person_descr div p{
     color :#747f89;
@@ -179,7 +190,7 @@ export default {
 
   .person_info_btns button{
     width: 46%;
-    height: 50px;
+    height: 45px;
     border-radius: 42px;
     border: none;
     color: white;
