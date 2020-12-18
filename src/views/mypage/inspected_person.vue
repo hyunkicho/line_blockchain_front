@@ -190,7 +190,7 @@ export default {
   }
   .person_info_btns a:nth-child(2) button{
     background-color: #167af9;
-    /* margin-right: 15px; */
+    margin-right: 0px;
   }
 
 </style>
