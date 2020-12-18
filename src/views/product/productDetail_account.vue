@@ -69,8 +69,6 @@
             <button @click="accountBtnClick()">즉시판매 계속</button>
         </div>
     </div>
-
-
 </div>
 </template>
 

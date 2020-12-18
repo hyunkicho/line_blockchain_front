@@ -175,7 +175,6 @@ export default {
     text-align:left;
     font-size:14px;
     line-height: 23px;
-
 }
 .productCert section:nth-child(2)>div ul:nth-child(2) span{
     display: inline-block;

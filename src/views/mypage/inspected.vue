@@ -2,60 +2,36 @@
 <div class="mypage">
     <div class="main-wrap">
         <header-nav :header="header"/>
-          <section class="profile">
-            <ul>
-              <li>
-                <img src="@/assets/resources/profile_image.svg" alt="profile">
-              </li>
-              <li>
-                <p>홍길동</p>
-                <p>email@example.com</p>
-              </li>
-              <li>
-                <img src="@/assets/resources/profile_edit.svg" alt="edit">
-              </li>
-            </ul>
-          </section>
-
           <section class="my_profile">
-            <h3 class="mypage_h3">나의 프로필</h3>
+            <h3 class="mypage_h3">검수자 활동내역</h3>
             <ul>
-              <router-link v-if="inspected" to="/inspected">
               <li>
-                <p>검수자 활동내역</p>
-                <p>인증 상태</p>
+                <p>검증 가능상품
+                  <span>100건</span>
+                </p>
               </li>
-              </router-link>
-              <router-link v-else to="/inspect_step1">
+
               <li>
-                <p>검수자 활동내역</p>
-                <p>미인증 상태</p>
-              </li>
-              </router-link>
-              <li>
-                <p>My 포인트
-                  <span>0P</span>
+                <p>검증 히스토리
+                  <span>13건</span>
                 </p>
               </li>
             </ul>
 
-            <h3 class="mypage_h3">나의 거래내역</h3>
+            <h3 class="mypage_h3">검수자 관리</h3>
               <ul>
-              <li>
-                <p>구매 내역
-                  <span>3건</span>
-                </p>
-                <p>전체 구매 내역</p>
-              </li>
-              <li>
-                <p>판매 내역
-                  <span>5건</span>
-                </p>
-                <p>전체 판매 내역</p>
-              </li>
-              <li>
-                <p>결제 정보 관리</p>
-              </li>
+                <li>
+                  <p>검수자 프로필</p>
+                </li>
+                <li>
+                  <p>나의 예치금
+                    <span>0원</span>
+                  </p>
+                </li>
+                <li>
+                  <p>검수자 활동중지</p>
+                  <p>활동중지 예치금 환급신청</p>
+                </li>
             </ul>
 
           </section>
@@ -149,30 +125,6 @@ export default {
     font-size: 14px;
     padding: 10px 15px 10px 15px;
   }
-
-  .profile ul{ 
-    display: flex;
-    align-items: center;
-    margin: 15px;
-    text-align: left;
-  }
-  .profile ul li:nth-child(1){ 
-    margin-left:0;
-  }
-  .profile li:nth-child(2) p:nth-child(1){ 
-    color: #404750;
-    font-weight: 600;
-    margin-bottom: 9px;
-  }
-  .profile li:nth-child(2) p:nth-child(2){ 
-    color: #747f89;
-    font-weight: 300;
-    font-size:14px;
-  }
-  .profile li:last-child{ 
-    margin-left: auto;
-  }
-
 
   .my_profile ul{
     display: flex;

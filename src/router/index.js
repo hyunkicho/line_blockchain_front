@@ -10,6 +10,7 @@ import Inspect_step1 from '../views/mypage/inspect_step1.vue'
 import Inspect_step2 from '../views/mypage/inspect_step2.vue'
 import Inspect_step3 from '../views/mypage/inspect_step3.vue'
 import Inspect_sucess from '../views/mypage/inspect_sucess.vue'
+import Inspected from '../views/mypage/inspected.vue'
 import List from '../views/footer/list.vue'
 import Search from '../views/footer/search.vue'
 import Mypage from '../views/footer/mypage.vue'
@@ -71,6 +72,11 @@ const routes = [
     path: '/inspect_sucess',
     name: 'inspect_sucess',
     component: Inspect_sucess
+  },
+  {
+    path: '/inspected',
+    name: 'inspected',
+    component: Inspected
   },
 
   {

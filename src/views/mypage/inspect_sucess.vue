@@ -1,6 +1,5 @@
 <template>
 <div class="inspect_step1">
-
         <div class="inspect_sucess_wrap">
             <div>
                 <img src="@/assets/resources/checkbox_ico_active.svg" alt="">
@@ -9,12 +8,9 @@
             <p>절차가 완료되었습니다.<br/>승인이 완료된 경우 <span style="color:#167af9; font-weight:400">알림</span>을 보내드립니다.</p>
 
         </div>
-
         <div class="to_step_btn" @click="routerClick()">
             <button>확인</button>
         </div>
-        
-
 </div>
 </template>
 
@@ -43,6 +39,7 @@ export default {
 
   methods: {
       routerClick(){
+        localStorage.setItem('mypage', "inspect")
         this.$router.replace('/')
       }
   },
