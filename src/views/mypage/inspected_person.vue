@@ -15,13 +15,14 @@
               </ul>
 
               <p>
-                회의 때 말한 것처럼 해당 검증자에 대한 자기소개나<br/>
-                그런 짧은 글을 넣으면 될 것 같습니다아아아아. 
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, perspiciatis!
               </p>
               <div class="person_info_btns">
-                <button>검증자 정보보기</button>
                 <a :href="'https://explorer.blockchain.line.me/cashew/transaction/' +this.txHash" target="_blank">
-                  <button>검증자 이력보기</button>
+                  <button>검증자 활동보기</button>
+                </a>
+                <a :href="this.addrex" target="_blank">
+                  <button>검증 이력보기</button>
                 </a>
               </div>
 
@@ -39,6 +40,7 @@
 import { Row, Col, Input, Button, Form, FormItem } from 'element-ui';
 import header from '@/components/header.vue'
 import footer from '@/components/footer.vue'
+import {request} from "@/assets/js/apps.js";
 export default {
   name: 'Footer',
   components: {
@@ -53,6 +55,7 @@ export default {
   data() {
     return {
       txHash: "",
+      addrex: "",
       inspected : false,
       header : {
         width : "100%",
@@ -91,7 +94,9 @@ export default {
     this.init();
   },
   methods: {
-    init() {
+    async init() {
+      this.addrex = await request.get("/validator_nft/address_explorer");
+
       if(localStorage.mypage) {
         this.inspected = true;
         this.txHash = localStorage.getItem("mypage")
