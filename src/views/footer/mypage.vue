@@ -34,7 +34,10 @@
               </router-link>
               <li>
                 <p>My 포인트
-                  <span>0P</span>
+                  <span>
+                    <img src="@/assets/resources/bv_token_ico.svg" alt="" style="width: 15px; position: relative; top: 2px; left: -2px;">
+                    0
+                    </span>
                 </p>
               </li>
             </ul>
@@ -181,7 +184,7 @@ export default {
   }
   .my_profile ul li{
     width: 93%;
-    padding: 15px 5px 15px 5px;
+    padding: 15px 5px 15px 0px;
     height:30px;
     
   }
@@ -206,6 +209,7 @@ export default {
     top: -2px;
     color: #167af9;
   }
+
   .my_profile ul li p:nth-child(2){
     color: #747f89;
     font-size: 14px;

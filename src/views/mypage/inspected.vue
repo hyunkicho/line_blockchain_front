@@ -20,9 +20,11 @@
 
             <h3 class="mypage_h3">검수자 관리</h3>
               <ul>
+                <router-link v-if="inspected" to="/inspected_person">
                 <li>
                   <p>검수자 프로필</p>
                 </li>
+                </router-link>
                 <li>
                   <p>나의 예치금
                     <span>0원</span>
@@ -133,7 +135,7 @@ export default {
   }
   .my_profile ul li{
     width: 93%;
-    padding: 15px 5px 15px 5px;
+    padding: 15px 5px 15px 0px;
     height:30px;
     
   }

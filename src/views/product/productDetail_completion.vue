@@ -84,7 +84,7 @@ export default {
     async init(product,gubun) {
         this.productData = JSON.parse(JSON.stringify(this.$route.params.product));
         this.productData.size = this.$route.params.fixSize;
-        let mint_nft = await request.post("/product/mint_nft/");
+        let mint_nft = await request.post("/product_nft/mint");
         this.productData.txHash = mint_nft.txHash;
 
         localStorage.setItem(this.$route.params.product.tag, JSON.stringify(this.productData));
