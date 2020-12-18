@@ -69,7 +69,7 @@ export default {
 
   methods: {
     async init() {
-        let product_nft = await request.get("/api/retreive_product_nft");
+        let product_nft = await request.get("/product/retreive_product_nft");
         let d = new Date(product_nft.createdAt)
         let time = d.getFullYear() + "." + d.getMonth() + "." + d.getDay()
 
