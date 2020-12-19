@@ -9,8 +9,8 @@
                     <p>검수자의 등급을 선택하세요.</p>
                 
                     <ul :class="{active : btnidx == 0}" @click="levelClcik('platinum',0)">
-                        <li>Platinum</li>
-                        <li>-100,000원</li>
+                        <li>Platinum></li>
+                        <li><del style="color:#dedfe5; margin-right:10px;">100,000</del> -80,000원</li>
                     </ul>
                     <ul :class="{active : btnidx == 1}" @click="levelClcik('dia',1)">
                         <li>Diamond</li>
@@ -102,7 +102,7 @@ export default {
          this.btnidx = idx;
          switch (level) {
              case "platinum":
-                 this.datas.productPrice = numberWithCommas(this.price.replace(/[^0-9]/g,'')-100000)
+                 this.datas.productPrice = numberWithCommas(this.price.replace(/[^0-9]/g,'')-80000)
                  break;
              case "dia":
                  this.datas.productPrice = numberWithCommas(this.price.replace(/[^0-9]/g,'')-80000)
@@ -136,7 +136,7 @@ export default {
     return {
         price : 0,
         idx:0,
-        btnidx:5,
+        btnidx:0,
         header : {
             left : {
                 src : require("@/assets/resources/backspace.svg"),
@@ -165,6 +165,11 @@ export default {
 }
 .productinpect .main-wrap{
     padding-bottom:0px;
+}
+
+.inspect_wrap h2::after {
+    content: url("../../assets/resources/sale_img.svg");
+    float: right;
 }
 
 .productinpect ul{

@@ -5,14 +5,29 @@
           <section class="level_wrap">
 
             <div>
-              <img src="@/assets/resources/medal_gold.svg" alt="">
+              <p>Best Validator 2020</p>            
+              <img src="@/assets/resources/person.png" alt="">
             </div>
-            <p>시즌 우수 검수자</p>            
-            <p>이번 시즌 우수 검수자로 선정되었습니다. <br/>
+            <p>2020년 12월 고객만족도 1위인 검수자<br>
               현재 검수자의 등급은 
               <span>Gold</span> 입니다.</p>            
-            <button>내용확인</button>
+            <!-- <button>내용확인</button> -->
           </section>
+
+          <section>
+            <div>
+                <ul>
+                    <li><img src="@/assets/resources/cert_logo.svg" alt=""></li>
+                </ul>
+                <ul>
+                    <li><span>고유번호</span>  <span>1000000200000001</span></li>
+                    <li><span>수상일자</span><span>1608315884666</span></li>
+                </ul>
+            </div>
+            <a :href="'https://explorer.blockchain.line.me/cashew/transaction/'" target="_blank">
+                <button>검수내역 보기</button>
+            </a>
+        </section>
 
         <!-- <footer-nav :footer="footer"/> -->
     </div>
@@ -99,30 +114,33 @@ export default {
   .level_wrap {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 67px);
+    height: calc(100vh - 260px);
     justify-content: center;
     align-items: center;
     position: relative;
-    top: -50px;
+    /* top: -140px; */
   }
   .level_wrap div:nth-child(1){
-    background: #eceff5;
-    width: 55px;
-    height: 55px;
-    border-radius: 55px;
-    margin-bottom:16px;
+    margin-bottom:20px;
   }
   .level_wrap div:nth-child(1) img{
     vertical-align: middle;
-    position: relative;
-    top: 15px;
-    width: 22px;
+    width: 75%;
+  }
+  .level_wrap div:nth-child(1) p{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 18px;
   }
   .level_wrap p:nth-child(2){
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    line-height: 22px;
+    font-weight: 500;
   }
+  .level_wrap p:nth-child(2) span{
+    color:#167af9
+  }
+
+
   .level_wrap p:nth-child(3){
     color: #747f89;
     font-size: 14px;
@@ -145,5 +163,51 @@ export default {
     margin: 15px 10px 0px 10px;
   }
 
+
+/* 섹션2 */
+.mypage_person_level section:nth-child(3){
+    height: 172px;
+    width: 100%;
+    background: #f9faff;
+    max-width: 768px;
+    margin: auto;
+    padding-top: 5px;
+}
+
+.mypage_person_level section:nth-child(3)>div{
+    display:flex;
+    align-items: center;
+    margin: 30px 20px 10px 20px;
+}
+.mypage_person_level section:nth-child(3)>div ul:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.mypage_person_level section:nth-child(3)>div ul:nth-child(2) li{
+    text-align:left;
+    font-size:14px;
+    line-height: 26px;
+}
+.mypage_person_level section:nth-child(3)>div ul:nth-child(2) span{
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    color: #747f89;
+    padding-right: 10px;
+}
+.mypage_person_level section:nth-child(3)>div ul:nth-child(2) span:nth-child(2){
+    text-align: right;
+}
+
+.mypage_person_level section:nth-child(3) button {
+    border-radius: 50px;
+    border: none;
+    background: #167af9;
+    color: white;
+    width: 90%;
+    height: 50px;
+    margin: 15px 10px 0px 10px;
+}
 
 </style>

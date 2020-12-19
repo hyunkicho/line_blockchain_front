@@ -184,7 +184,7 @@ export default {
   }
   .my_profile ul li{
     width: 93%;
-    padding: 15px 5px 15px 0px;
+    padding: 15px 0px 15px 5px;
     height:30px;
     
   }

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="index">
 
   <div class="main-wrap">
     <header-nav :header="header"/>
@@ -13,8 +13,8 @@
     <div class="wrap-margin">
       <h2>Just Dropped</h2>
       <p>발매상품</p>
-      <productList products='newProduct'/>
     </div>
+    <productList products='newProduct'/>
 
     <carousel :per-page="1">
       <slide>
@@ -25,8 +25,8 @@
     <div class="wrap-margin">
       <h2>Most Popular</h2>
       <p>인기상품</p>
-      <productList products='popularProduct'/>
     </div>
+    <productList products='popularProduct'/>
 
     <div class="plusBtnWrap" @click="plusRouter()">
       <img src="../assets/resources/plus.svg" alt="">
@@ -129,4 +129,11 @@ export default {
 }
 </script>
 <style>
+.index .wrap-margin {
+  margin-bottom:0px;
+}
+.index .wrap-slide {
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
 </style>

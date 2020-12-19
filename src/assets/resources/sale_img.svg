@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="57" height="46" viewBox="0 0 57 46">
+    <g>
+        <text fill="#167af9" font-family="NotoSansKR-Regular, Noto Sans KR" font-size="12px" letter-spacing="-0.005em" transform="translate(-283 -97) translate(287 139)">
+            <tspan x="0" y="0">20% 할인</tspan>
+        </text>
+        <g transform="translate(-283 -97)">
+            <rect width="57" height="23" fill="#167af9" rx="5" transform="translate(283 97)"/>
+            <text fill="#fff" font-family="NotoSansKR-Bold, Noto Sans KR" font-size="14px" font-weight="700" letter-spacing="-0.01em" transform="translate(294 115)">
+                <tspan x="0" y="0">Basic</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

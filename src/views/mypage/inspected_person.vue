@@ -185,6 +185,7 @@ export default {
     color :#747f89;
     font-size:14px;
     text-align: left;
+    line-height: 23px;
   }
 
   .person_info_btns {
