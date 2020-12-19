@@ -153,6 +153,8 @@ export default {
 
 /* 섹션2 */
 .productCert section:nth-child(2){
+    position: fixed;
+    bottom:0;
     height: 172px;
     width: 100%;
     background: #f9faff;
