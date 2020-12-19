@@ -137,6 +137,7 @@ export default {
 }
 .alramList .main-wrap div ul dd{
   font-size:13px;
+  list-style: 16px;
 }
 .alramList .main-wrap div ul li:nth-child(3) img{
   width:70px;
