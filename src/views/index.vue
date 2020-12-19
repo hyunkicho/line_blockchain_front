@@ -134,6 +134,6 @@ export default {
 }
 .index .wrap-slide {
   padding-left: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 </style>
