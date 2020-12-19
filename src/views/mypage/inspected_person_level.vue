@@ -24,7 +24,7 @@
                     <li><span>수상일자</span><span>1608315884666</span></li>
                 </ul>
             </div>
-            <router-link to="/alram">
+            <router-link to="/inspected_product">
                 <button>검수내역 보기</button>
             </router-link>
         </section>

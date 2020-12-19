@@ -9,7 +9,7 @@
                     <p>검수자의 등급을 선택하세요.</p>
                 
                     <ul :class="{active : btnidx == 0}" @click="levelClcik('platinum',0)">
-                        <li>Platinum></li>
+                        <li>Platinum</li>
                         <li><del style="color:#dedfe5; margin-right:10px;">100,000</del> -80,000원</li>
                     </ul>
                     <ul :class="{active : btnidx == 1}" @click="levelClcik('dia',1)">
