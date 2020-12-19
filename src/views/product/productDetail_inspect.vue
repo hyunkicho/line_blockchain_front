@@ -161,7 +161,7 @@ export default {
     border:none;
 }
 .productinpect .account_footer{
-    position: relative;
+    /* position: relative; */
 }
 .productinpect .main-wrap{
     padding-bottom:0px;
