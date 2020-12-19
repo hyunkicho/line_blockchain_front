@@ -26,7 +26,7 @@
                 </ul>
                 <ul>
                     <li><span>검수일자</span>  <span>{{time}}</span></li>
-                    <li><span>검수자</span>  <span>Chohyunki</span></li>
+                    <li><span>검수자</span><router-link to="inspected_person"><span class="insp_person">Chohyunki</span> </router-link></li>
                 </ul>
             </div>
             <a :href="'https://explorer.blockchain.line.me/cashew/transaction/' +certData.txHash" target="_blank">
@@ -174,7 +174,7 @@ export default {
 .productCert section:nth-child(2)>div ul:nth-child(2) li{
     text-align:left;
     font-size:14px;
-    line-height: 23px;
+    line-height: 26px;
 }
 .productCert section:nth-child(2)>div ul:nth-child(2) span{
     display: inline-block;
@@ -196,4 +196,15 @@ export default {
     height: 50px;
     margin: 15px 10px 0px 10px;
 }
+
+.insp_person {
+    width: unset !important;
+    padding: 0px !important;
+    text-align: right;
+    border-bottom: 1px solid #c5c5c5;
+    color: #167af9 !important;
+    position: relative;
+    left: 13px;
+}
+
 </style>

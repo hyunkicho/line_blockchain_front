@@ -23,10 +23,10 @@
               </p>
               <div class="person_info_btns">
                 <a :href="'https://explorer.blockchain.line.me/cashew/transaction/' +this.txHash" target="_blank">
-                  <button>검증자 활동보기</button>
+                  <button>검증자 정보보기</button>
                 </a>
                 <a :href="this.addrex" target="_blank">
-                  <button>검증 이력보기</button>
+                  <button>검증 내역보기</button>
                 </a>
               </div>
 
@@ -65,7 +65,7 @@ export default {
         width : "100%",
         left : {
             src : require("@/assets/resources/backspace_white.svg"),
-            action : "back"
+            action : "index"
         },
         right : {
             src : require("@/assets/resources/header_gray_info.svg"),
@@ -131,10 +131,11 @@ export default {
     max-width: 768px;
     width: 100%;
     height: 260px;
-    border-radius: 18px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
     background: white;
     display: block;
-    position: absolute;
+    position: fixed;
     bottom: 0;
   }
 

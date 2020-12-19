@@ -157,6 +157,16 @@ export default {
 
 
 <style>
+.productinpect .account_footer ul{
+    border:none;
+}
+.productinpect .account_footer{
+    position: relative;
+}
+.productinpect .main-wrap{
+    padding-bottom:0px;
+}
+
 .productinpect ul{
     display: flex;
     border: 1px solid #ededf0;
