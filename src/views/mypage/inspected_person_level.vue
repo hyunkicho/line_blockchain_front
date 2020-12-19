@@ -11,8 +11,7 @@
             <p>이번 시즌 우수 검수자로 선정되었습니다. <br/>
               현재 검수자의 등급은 
               <span>Gold</span> 입니다.</p>            
-
-            <button>링크이동</button>
+            <button>내용확인</button>
           </section>
 
         <!-- <footer-nav :footer="footer"/> -->
@@ -38,9 +37,7 @@ export default {
   },
   data() {
     return {
-      txHash: "",
-      addrex: "",
-      inspected : false,
+      prize: "",
       header : {
         width : "100%",
         left : {
@@ -75,11 +72,11 @@ export default {
     }
   },
   async created () {
-    // this.init();
+    this.init();
   },
   methods: {
     async init() {
-      // this.addrex = await request.get("/validator_nft/address_explorer");
+      this.prize = await request.get("/validator_nft/retreive_prize");
 
       // if(localStorage.mypage) {
       //   this.inspected = true;

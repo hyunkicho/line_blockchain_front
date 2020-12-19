@@ -140,6 +140,7 @@ export default {
           this.size = size;
           this.productInfo[0].productPrice = this.sizesPrice[idx];
           this.dialogVisible = false;
+          this.$router.replace({name: "productDetail_account", params: {product: this.productInfo[0], fixSize:this.size} })
       },    
 
       btnTab(btn){
