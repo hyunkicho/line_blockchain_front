@@ -24,9 +24,9 @@
                     <li><span>수상일자</span><span>1608315884666</span></li>
                 </ul>
             </div>
-            <a :href="'https://explorer.blockchain.line.me/cashew/transaction/'" target="_blank">
+            <router-link to="/alram">
                 <button>검수내역 보기</button>
-            </a>
+            </router-link>
         </section>
 
         <!-- <footer-nav :footer="footer"/> -->

@@ -29,10 +29,10 @@
                     <p>계좌번호</p>
                     <v-input type="number" placeholder="계좌번호를 입력해주세요." v-model="email" clearable></v-input>
                 </div>
-                <div>
+                <!-- <div>
                     <p>예치금액</p>
                     <v-input placeholder="예치금액을 입력해주세요." v-model="price" clearable></v-input>
-                </div>
+                </div> -->
             </div>
 
             <div class="to_step_btn">
