@@ -58,7 +58,7 @@ import { Row, Col } from 'element-ui';
 /* custom */
 import header from '@/components/header.vue'
 import footer from '@/components/footer.vue'
-import axios from "axios";
+import {request} from "@/assets/js/apps.js";
 
 export default {
   name: 'Main',
@@ -86,23 +86,17 @@ export default {
     }
   },
   created() {
-    // this.init();
+    this.init();
   },
   methods: {
     routerClick(path){
       location.href=path;
     },
 
-    init(){
+    async init(){
 
-      if (localStorage.length > 0) {
-        for (let i = 0; i < localStorage.length; i++) {
-          if (localStorage.key(i) != "loglevel:webpack-dev-server")
-            this.alramItem.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-        }
-      }
-
-     
+      let get_transfer = await request.get("/validator_nft/get_transfer");
+      console.log(get_transfer,'etete')
 
       // if (localStorage.length > 0) {
       //   for (let i = 0; i < localStorage.length; i++) {

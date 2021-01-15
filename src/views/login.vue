@@ -30,7 +30,7 @@
         </v-col> -->
     </v-row>
     
-    <v-row :gutter="20">
+    <v-row :gutter="20" style="float:right">
         <v-col :span="3">
         <v-button v-if="loginBtnOn" type="primary" @click="loginSubmit">로그인</v-button>
         <v-button v-else type="info" @click="loginSubmit">로그인</v-button>

@@ -25,9 +25,10 @@
                 <a :href="'https://explorer.blockchain.line.me/cashew/transaction/' +this.txHash" target="_blank">
                   <button>검증자 정보보기</button>
                 </a>
-                <a :href="this.addrex" target="_blank">
+                <router-link to="/inspected_product">
+
                   <button>검증 내역보기</button>
-                </a>
+                </router-link>
               </div>
 
             </div>
@@ -99,7 +100,7 @@ export default {
   },
   methods: {
     async init() {
-      this.addrex = await request.get("/validator_nft/address_explorer");
+      // this.addrex = await request.get("/validator_nft/address_explorer");
 
       if(localStorage.mypage) {
         this.inspected = true;
