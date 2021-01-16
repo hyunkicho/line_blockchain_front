@@ -3,7 +3,7 @@
     <div class="main-wrap">
         <header-nav :header="header"/>
           <section class="profile">
-            <div class="profile-card" :class="{card_inspected : inspected}">
+            <div @click="card_click()" class="profile-card" :class="{card_inspected : inspected}">
               <ul>
                 <li>박성웅</li>
                 <li>Validator</li>
@@ -153,8 +153,12 @@ export default {
             this.percentage = 100;
           } 
         }, 1000);
+    },
 
+    card_click(){
+      this.$router.replace(`/inspected_person`)
     }
+
   },
 }
 </script>
