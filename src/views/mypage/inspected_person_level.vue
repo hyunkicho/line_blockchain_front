@@ -242,7 +242,8 @@ export default {
 
   .brand {
     border-top: 1px solid #dadae1;
-    margin-top: 15%;
+    margin-top: 37px;
+    padding-top: 30px;
     padding-top: 10%;
   }
   .brand ul{
@@ -289,6 +290,7 @@ export default {
   }
   .person_cert_wrap li:nth-child(2){
     text-align: right;
+    margin-left:auto;
   }
   .person_cert_wrap li:nth-child(2) img{
     width:41%;
