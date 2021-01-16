@@ -30,7 +30,7 @@
                 </ul>
             </div>
             <a :href="'https://explorer.blockchain.line.me/cashew/transaction/' +certData.txHash" target="_blank">
-                <button>검수내역 보기</button>
+                <button>블록체인 조회</button>
             </a>
         </section>
 

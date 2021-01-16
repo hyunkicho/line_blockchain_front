@@ -25,7 +25,7 @@
               </p>
               <div class="person_info_btns">
                 <a :href="'https://explorer.blockchain.line.me/cashew/transaction/2875320DF6979EA3179F2E512ED56415BAE492C6A1E232E231EAD39186A8D4C9'" target="_blank">
-                  <button>검증자 정보보기</button>
+                  <button>블록체인 조회</button>
                 </a>
                 <router-link to="/inspected_product">
 

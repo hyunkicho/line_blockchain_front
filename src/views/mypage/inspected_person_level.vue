@@ -89,7 +89,7 @@
 
           <section>
             <a :href="'https://explorer.blockchain.line.me/cashew/transaction/A0874BE27BD113566F10922AEC37F99F844F4FAAA8DF36B37455B00F5D52DA23'" target="_blank">
-                <button>검수내역 보기</button>
+                <button>블록체인 조회</button>
             </a>
             
         </section>
