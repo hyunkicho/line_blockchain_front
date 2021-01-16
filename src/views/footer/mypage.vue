@@ -204,7 +204,7 @@ export default {
 
   .profile .profile-card {
     height: 200px;
-    width: 89%;
+    width: 91%;
     padding: 25px;
     background: linear-gradient(123deg, #58a1ff 1%, #006df7);
     border-radius: 15px;
