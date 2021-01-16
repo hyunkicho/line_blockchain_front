@@ -26,7 +26,7 @@
                 </ul>
                 <ul>
                     <li><span>검수일자</span>  <span>{{time}}</span></li>
-                    <li><span>검수자</span><router-link to="inspected_person"><span class="insp_person">Chohyunki</span> </router-link></li>
+                    <li><span>검수자</span><router-link to="inspected_person"><span class="insp_person">박성웅</span> </router-link></li>
                 </ul>
             </div>
             <a :href="'https://explorer.blockchain.line.me/cashew/transaction/' +certData.txHash" target="_blank">
@@ -206,7 +206,7 @@ export default {
     border-bottom: 1px solid #c5c5c5;
     color: #167af9 !important;
     position: relative;
-    left: 13px;
+    left: 29px;
 }
 
 </style>
