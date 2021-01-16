@@ -76,7 +76,8 @@
                     :visible.sync="dialogVisible"
                     width="90%"
                     >
-                    <p>즉시 판매가 (원)</p>
+                    <p v-if="this.buyOrsell == 'buy'">즉시 구매가 (원)</p>
+                    <p v-if="this.buyOrsell == 'sell'">즉시 판매가 (원)</p>
                     <div class="sizeButtonWrap">
                         <button :class="{active : sizeidx == 100}"><span>모든사이즈</span>  <span style="padding:0px;"></span><span>{{productInfo[0].productPrice}}</span></button>
                         <button v-for="(item,idx) in sizesKey" :key="idx" @click="sizeBtnClick(idx, item)" :class="{active : idx == sizeidx}">
