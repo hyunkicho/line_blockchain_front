@@ -3,23 +3,25 @@
     <div class="main-wrap">
         <header-nav :header="header"/>
           <section class="my_profile">
-            <img src="@/assets/resources/mypage_person.png" alt="" style="width:100%;">
+            <img src="@/assets/resources/inspected_park.png" alt="" style="width:100%;">
 
           </section>
 
           <section class="person_descr">
             <div>
               <ul>
-                <li>Charlotte</li>
+                <li>박성웅 <span>Validator</span></li>
                   <li>
                     <router-link router-link to="/inspected_person_level">
-                      <span>Gold</span>
+                      <!-- <span>자격확인</span> -->
+                      <img src="@/assets/resources/right_arrow_black.svg" alt="">
                     </router-link>
                   </li>
               </ul>
 
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, perspiciatis!
+              <p class="person_desc">
+                거래가 체결되는 시점에 등록하신 결제 정보로
+                자동 결제 됩니다. 자동 결제 됩니다.
               </p>
               <div class="person_info_btns">
                 <a :href="'https://explorer.blockchain.line.me/cashew/transaction/' +this.txHash" target="_blank">
@@ -157,21 +159,28 @@ export default {
   .person_descr div ul li:nth-child(1){
     color:#404750;
     font-size:16px;
-    font-weight:500;
-
+    font-weight:600;
   }
-  .person_descr div ul li:nth-child(2){
+
+  .person_descr div ul li:nth-child(1) span{
+    margin-left: 8px;
     color: #747f89;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .person_descr div ul li:nth-child(2){
+    /* color: #747f89; */
     margin-left: auto;
     font-size: 14px;
     padding-bottom: 10px;
-    border-bottom: solid 2px #d6e3f6;
+    /* border-bottom: solid 2px #d6e3f6; */
   }
-  .person_descr div ul li:nth-child(2)::after{
+  /* .person_descr div ul li:nth-child(2)::after{
     content: url("../../assets/resources/medal_gold.svg");
     vertical-align: middle;
     padding-left:13px;
-  }
+  } */
     .person_descr div ul li:nth-child(2) span{
     color:#167af9;
     font-weight: 600;
@@ -187,6 +196,10 @@ export default {
     font-size:14px;
     text-align: left;
     line-height: 23px;
+  }
+
+  .person_desc {
+    color :#747f89
   }
 
   .person_info_btns {

@@ -5,8 +5,12 @@
           <section class="profile">
             <div @click="card_click()" class="profile-card" :class="{card_inspected : inspected}">
               <ul>
-                <li>박성웅</li>
-                <li>Validator</li>
+                <li v-if="inspected">박성웅</li>
+                <li v-else>정은재</li>
+
+                <li v-if="inspected">Validator</li>
+                <li v-else>General user</li>
+
                 <li><img src="@/assets/resources/right_path.svg" alt=""></li>
               </ul>
 
@@ -105,7 +109,7 @@ export default {
   data() {
     return {
       inspected : false,
-      percentage:100,
+      percentage:60,
       header : {
         width : "100%",
         left : {
@@ -150,7 +154,7 @@ export default {
         setInterval(() => {
           this.percentage-=1;
           if (this.percentage == 0) {
-            this.percentage = 100;
+            this.percentage = 60;
           } 
         }, 1000);
     },
@@ -206,7 +210,7 @@ export default {
     height: 200px;
     width: 91%;
     padding: 25px;
-    background: linear-gradient(123deg, #58a1ff 1%, #006df7);
+    background :linear-gradient(123deg, #6c727b 1%, #404750);
     border-radius: 15px;
     margin: auto;
     box-sizing: border-box;
@@ -215,7 +219,7 @@ export default {
   }
 
   .profile .card_inspected {
-    background :linear-gradient(123deg, #6c727b 1%, #404750);
+    background: linear-gradient(123deg, #58a1ff 1%, #006df7);
   }
 
   .profile .profile-card ul {
@@ -230,7 +234,7 @@ export default {
   }
   .profile .profile-card ul:nth-child(1) li:nth-child(2){
     font-size:13px;
-    font-weight: 200;
+    font-weight: 300;
     color: white;
   }
 
@@ -276,7 +280,7 @@ export default {
 
   .el-progress-bar__outer {
     height:3px !important;
-    background:#5a9ff7;
+    background:#6f757e;
   }
 
   .el-progress__text {
@@ -284,7 +288,7 @@ export default {
   }
 
   .card_inspected .el-progress-bar__outer {
-    background:#6f757e;
+    background:#5a9ff7;
   }
   
 

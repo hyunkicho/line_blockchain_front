@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="69" height="20" viewBox="0 0 69 20">
+    <g>
+        <text fill="#404750" font-family="NotoSansKR-Medium, Noto Sans KR" font-size="14px" font-weight="500" letter-spacing="-0.01em" transform="translate(-266 -530) translate(266 546)">
+            <tspan x="0" y="0">자격확인</tspan>
+        </text>
+        <path d="M9.328 6.71a.955.955 0 0 0 0 1.41L13.453 12l-4.125 3.88a.955.955 0 0 0 0 1.41 1.106 1.106 0 0 0 1.5 0l4.879-4.59a.955.955 0 0 0 0-1.41l-4.88-4.59a1.117 1.117 0 0 0-1.499.01z" transform="translate(-266 -530) translate(318.982 528.584)"/>
+    </g>
+</svg>
