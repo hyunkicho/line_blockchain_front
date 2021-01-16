@@ -6,7 +6,7 @@
 
     <carousel :per-page="1">
       <slide>
-        <img src="../assets/resources/main1_slide.jpg">
+        <img src="../assets/resources/main_slide1.jpg">
       </slide>
     </carousel>
 
@@ -18,7 +18,7 @@
 
     <carousel :per-page="1">
       <slide>
-        <img src="../assets/resources/main3_slide.png">
+        <img src="../assets/resources/main_slide2.jpg">
       </slide>
     </carousel>
 
