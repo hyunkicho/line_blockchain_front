@@ -4,42 +4,42 @@
   <header-nav :header="header"/>
   <div class="main-wrap">
     <div>
-      <ul @click="routerClick()">
+      <ul onclick="window.open('https://explorer.blockchain.line.me/cashew/transaction/A67E6A2C1B2C87826B9919482F40B3B2BBCE8AA4A29540392212F7D6612AA447')">
           <li><img src="@/assets/resources/inspect_product1.png" alt=""></li>
           <li>검증내용제목<br><span>2020년 12월 19일</span></li>
           <li><img src="@/assets/resources/inspect_product_ico.svg" alt=""></li>       
       </ul>
     </div>
     <div>
-      <ul @click="routerClick()">
+      <ul onclick="window.open('https://explorer.blockchain.line.me/cashew/transaction/A67E6A2C1B2C87826B9919482F40B3B2BBCE8AA4A29540392212F7D6612AA447')">
         <li><img src="@/assets/resources/inspect_product2.png" alt=""></li>
         <li>검증내용제목<br><span>2020년 12월 15일</span></li>
         <li><img src="@/assets/resources/inspect_product_ico.svg" alt=""></li>
       </ul>
     </div>
     <div>
-      <ul @click="routerClick()">
+      <ul onclick="window.open('https://explorer.blockchain.line.me/cashew/transaction/A67E6A2C1B2C87826B9919482F40B3B2BBCE8AA4A29540392212F7D6612AA447')">
         <li><img src="@/assets/resources/inspect_product3.png" alt=""></li>
         <li>검증내용제목<br><span>2020년 12월 13일</span></li>
         <li><img src="@/assets/resources/inspect_product_ico.svg" alt=""></li>
       </ul>
     </div>
     <div>
-      <ul @click="routerClick()">
+      <ul onclick="window.open('https://explorer.blockchain.line.me/cashew/transaction/A67E6A2C1B2C87826B9919482F40B3B2BBCE8AA4A29540392212F7D6612AA447')">
         <li><img src="@/assets/resources/inspect_product4.png" alt=""></li>
         <li>검증내용제목<br><span>2020년 12월 12일</span></li>
         <li><img src="@/assets/resources/inspect_product_ico.svg" alt=""></li>
       </ul>
     </div>
     <div>
-      <ul @click="routerClick()">
+      <ul onclick="window.open('https://explorer.blockchain.line.me/cashew/transaction/A67E6A2C1B2C87826B9919482F40B3B2BBCE8AA4A29540392212F7D6612AA447')">
         <li><img src="@/assets/resources/inspect_product5.png" alt=""></li>
         <li>검증내용제목<br><span>2020년 12월 12일</span></li>
         <li><img src="@/assets/resources/inspect_product_ico.svg" alt=""></li>
       </ul>
     </div>
     <div>
-      <ul @click="routerClick()">
+      <ul onclick="window.open('https://explorer.blockchain.line.me/cashew/transaction/A67E6A2C1B2C87826B9919482F40B3B2BBCE8AA4A29540392212F7D6612AA447')">
         <li><img src="@/assets/resources/inspect_product6.png" alt=""></li>
         <li>검증내용제목<br><span>2020년 12월 11일</span></li>
         <li><img src="@/assets/resources/inspect_product_ico.svg" alt=""></li>
