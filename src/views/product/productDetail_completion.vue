@@ -89,7 +89,9 @@ export default {
         this.productData = JSON.parse(JSON.stringify(this.$route.params.product));
         this.productData.size = this.$route.params.fixSize;
         this.buyOrsell = this.$route.params.buyOrsell;
-        let mint_nft = await request.post("/product_nft/mint");
+        const mint_nft = await request.post("/product_nft/mint");
+        const transfer = await request.post("/product_nft/transfer");
+        const transfer2 = await request.post("/product_nft/transfer2");
         this.productData.txHash = mint_nft.txHash;
 
         localStorage.setItem(this.$route.params.product.tag, JSON.stringify(this.productData));

@@ -88,9 +88,10 @@
           </section>
 
           <section>
-            <router-link to="/inspected_product">
+            <a :href="'https://explorer.blockchain.line.me/cashew/transaction/A0874BE27BD113566F10922AEC37F99F844F4FAAA8DF36B37455B00F5D52DA23'" target="_blank">
                 <button>검수내역 보기</button>
-            </router-link>
+            </a>
+            
         </section>
 
         <!-- <footer-nav :footer="footer"/> -->
