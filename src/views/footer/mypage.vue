@@ -3,6 +3,19 @@
     <div class="main-wrap">
         <header-nav :header="header"/>
           <section class="profile">
+            <div class="profile-card" :class="{card_inspected : inspected}">
+              <ul>
+                <li>박성웅</li>
+                <li>Validator</li>
+                <li><img src="@/assets/resources/right_path.svg" alt=""></li>
+              </ul>
+
+              <ul>
+                <li>Time left <span>00 : {{percentage}}</span></li>
+                <v-progress :percentage="percentage"></v-progress>
+              </ul>
+            </div>
+            
             <ul>
               <li>
                 <img src="@/assets/resources/profile_image.svg" alt="profile">
@@ -74,7 +87,7 @@
 </template>
 
 <script>
-import { Row, Col, Input, Button, Form, FormItem } from 'element-ui';
+import { Row, Col, Input, Button, Form, FormItem, Progress } from 'element-ui';
 import header from '@/components/header.vue'
 import footer from '@/components/footer.vue'
 export default {
@@ -84,6 +97,7 @@ export default {
     "footer-nav" : footer,
     "v-row": Row,
     "v-col": Col,
+    "v-progress": Progress,
   },
   props: {
     // msg: String
@@ -91,6 +105,7 @@ export default {
   data() {
     return {
       inspected : false,
+      percentage:100,
       header : {
         width : "100%",
         left : {
@@ -132,6 +147,13 @@ export default {
       if(localStorage.mypage) {
         this.inspected = true
       }
+        setInterval(() => {
+          this.percentage-=1;
+          if (this.percentage == 0) {
+            this.percentage = 100;
+          } 
+        }, 1000);
+
     }
   },
 }
@@ -176,6 +198,90 @@ export default {
     margin-left: auto;
   }
 
+  .profile .profile-card {
+    height: 200px;
+    width: 89%;
+    padding: 25px;
+    background: linear-gradient(123deg, #58a1ff 1%, #006df7);
+    border-radius: 15px;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  .profile .card_inspected {
+    background :linear-gradient(123deg, #6c727b 1%, #404750);
+  }
+
+  .profile .profile-card ul {
+    display: flex;
+    margin: 0px;
+  }
+  .profile .profile-card ul:nth-child(1) li:nth-child(1){
+    margin-right: 0px;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+  }
+  .profile .profile-card ul:nth-child(1) li:nth-child(2){
+    font-size:13px;
+    font-weight: 200;
+    color: white;
+  }
+
+  .profile .profile-card ul:nth-child(2){
+    flex-direction: column;
+    height: 92%;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .profile .profile-card ul:nth-child(2) li:nth-child(1){
+    color:white;
+    font-size:13px;
+    line-height: 23px;
+  }
+  .profile .profile-card ul:nth-child(2) li:nth-child(1) span{
+    color:white;
+    font-size:12px;
+    margin-left:8px;
+    font-weight: 700;
+  }
+  .profile .profile-card ul:nth-child(2) .el-progress::after{
+    /* content: url("../../assets/resources/qr_code.jpg"); */
+    background-image: url("../../assets/resources/qr_code.jpg");
+    /* background-size: 90px 20px; */
+    background-repeat: no-repeat;
+    width: 130px;
+    height: 127px;
+    margin-left: 25px;
+    margin-top: -71px;
+    transform: scale(0.37);
+    content: "";
+    position: absolute;
+  }
+
+  .el-progress {
+    width:80%;
+  }
+
+  .el-progress-bar__inner {
+    background:white;
+  }
+
+  .el-progress-bar__outer {
+    height:3px !important;
+    background:#5a9ff7;
+  }
+
+  .el-progress__text {
+    display:none;
+  }
+
+  .card_inspected .el-progress-bar__outer {
+    background:#6f757e;
+  }
+  
+
 
   .my_profile ul{
     display: flex;
@@ -214,5 +320,7 @@ export default {
     color: #747f89;
     font-size: 14px;
   }
+
+
 
 </style>

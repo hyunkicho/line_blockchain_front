@@ -8,7 +8,8 @@
                 <img :src="productData.src">
             </div>
             <ul>
-                <li>판매등록이 완료되었습니다.</li>
+                <li v-if="buyOrsell=='buy'">구매등록이 완료되었습니다.</li>
+                <li v-if="buyOrsell=='sell'">판매등록이 완료되었습니다.</li>
                 <li>검증을 위해 아래 주소로 상품을 보내주세요.</li>
                 <li>서울특별시 영등포구 63로 50</li>
             </ul>
@@ -17,7 +18,8 @@
 
         <div class="section2 wrap-margin">
             <ul>
-                <li>판매 희망가</li>
+                <li v-if="buyOrsell=='buy'" >구매 희망가</li>
+                <li v-if="buyOrsell=='sell'">판매 희망가</li>
                 <li>{{productData.productPrice}}원</li>
             </ul>
             <ul>
@@ -26,10 +28,12 @@
             </ul>
             <ul>
                 <li>배송비</li>
-                <li>선불∙판매자 부담</li>
-            </ul>
+                <li v-if="buyOrsell=='buy'" >선불∙구매자 부담</li>
+                <li v-if="buyOrsell=='se ll'">선불∙판매자 부담</li>
+            </ul> 
             <ul>
-                <li>예상 판매금액</li>
+                <li v-if="buyOrsell=='buy'" >예상 구매금액</li>
+                <li v-if="buyOrsell=='sell'">예상 판매금액</li>
                 <li>{{productData.productPrice}}원</li>
             </ul>
         </div>
@@ -84,6 +88,7 @@ export default {
     async init(product,gubun) {
         this.productData = JSON.parse(JSON.stringify(this.$route.params.product));
         this.productData.size = this.$route.params.fixSize;
+        this.buyOrsell = this.$route.params.buyOrsell;
         let mint_nft = await request.post("/product_nft/mint");
         this.productData.txHash = mint_nft.txHash;
 
@@ -94,6 +99,7 @@ export default {
   data() {
     return {
         productData : "",
+        buyOrsell : "",
         header : {
             width:"100%",
             left : {

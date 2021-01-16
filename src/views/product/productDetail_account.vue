@@ -23,16 +23,21 @@
                     </ul>
                 </div>
 
-                <div class="buttonWrap">
+                <div class="buttonWrap" :class="{buy : buyOrsell == 'buy'}">
                     <button :class="{active : btnidx == idx}" v-for="(btn,idx) in priceButtons" :key="btn" @click="priceButtonsTab(idx)">{{btn}}</button>
                 </div>
                 <div class="priceInputWrap">
-                    <template>
+                    <template v-if="buyOrsell == 'buy'" >
+                        <img src="@/assets/resources/pricebuy.svg" alt="price">
+                        <v-input v-if="this.btnidx==0" v-model="price" placeholder="희망가 입력" @focus="focusOnMobile = true"  @blur="focusOnMobile = false"></v-input>
+                        <div v-else>{{datas.productPrice}}</div><span>원</span>
+                        <!-- <v-input v-model="price" type="number">{{datas.productPrice}}</v-input> -->
+                    </template>
+                    <template v-if="buyOrsell == 'sell'" >
                         <img src="@/assets/resources/pricesell.svg" alt="price">
                         <v-input v-if="this.btnidx==0" v-model="price" placeholder="희망가 입력" @focus="focusOnMobile = true"  @blur="focusOnMobile = false"></v-input>
                         <div v-else>{{datas.productPrice}}</div><span>원</span>
                         <!-- <v-input v-model="price" type="number">{{datas.productPrice}}</v-input> -->
-                        
                     </template>
                 </div>
 
@@ -61,7 +66,14 @@
             </section> -->
 
         </div>
-        <div class="account_footer" :class="{focusOnMobile}">
+        <div v-if="buyOrsell == 'buy'" class="account_footer" :class="{focusOnMobile}">
+            <ul>
+                <li>총 결제 금액</li>
+                <li>{{datas.productPrice}}원</li>
+            </ul>
+            <button @click="accountBtnClick()">즉시구매 계속</button>
+        </div>
+        <div v-if="buyOrsell == 'sell'" class="account_footer" :class="{focusOnMobile}">
             <ul>
                 <li>총 결제 금액</li>
                 <li>{{datas.productPrice}}원</li>
@@ -108,9 +120,13 @@ export default {
   },
 
   methods: {
-      init(product,gubun) {
+      init(product) {
           this.datas = this.$route.params.product;
           this.fixSize = this.$route.params.fixSize;
+          this.buyOrsell =  this.$route.params.buyOrsell;
+          if(this.buyOrsell == "buy"){
+              this.priceButtons = ['판매입찰', '즉시구매']
+          }
       },
       priceButtonsTab(btn){
         this.btnidx = btn;
@@ -120,7 +136,7 @@ export default {
       },
 
       async accountBtnClick() {
-        this.$router.replace({name: "productDetail_inspect", params: {product: this.datas, fixSize:this.fixSize} })
+        this.$router.replace({name: "productDetail_completion", params: {product: this.datas, fixSize:this.fixSize, buyOrsell:this.buyOrsell } })
         // const nft1 = await request.post("/api/transfer_nft")
         // const nft2 = await request.post("/api/transfer_nft2")
       },
@@ -136,6 +152,7 @@ export default {
         fixSize : 0,
         focusOnMobile : false,
         priceButtons : ['판매입찰', '즉시판매'],
+        buyOrsell : "",
         header : {
             left : {
                 src : require("@/assets/resources/backspace.svg"),

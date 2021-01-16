@@ -65,8 +65,8 @@
             </div>
 
             <div class="salebtnWrap">
-                <button @click="sellBtnClick()">구매 <span>|</span> {{productInfo[0].productPrice}}</button>
-                <button @click="sellBtnClick()">판매 <span>|</span> {{productInfo[0].productPrice}}</button>
+                <button @click="sellBtnClick('buy')">구매 <span>|</span> {{productInfo[0].productPrice}}</button>
+                <button @click="sellBtnClick('sell')">판매 <span>|</span> {{productInfo[0].productPrice}}</button>
             </div>
 
 
@@ -80,6 +80,7 @@
                     <div class="sizeButtonWrap">
                         <button :class="{active : sizeidx == 100}"><span>모든사이즈</span>  <span style="padding:0px;"></span><span>{{productInfo[0].productPrice}}</span></button>
                         <button v-for="(item,idx) in sizesKey" :key="idx" @click="sizeBtnClick(idx, item)" :class="{active : idx == sizeidx}">
+                        <!-- <button v-for="(item,idx) in sizesKey" :key="idx" @click="sizeBtnClick(idx, item)" :class="{active : idx == sizeidx}"> -->
                             <span>{{item}}</span> <span> | </span> <span>{{sizesPrice[idx]}}</span>
                         </button>
                     </div>
@@ -140,26 +141,30 @@ export default {
           this.size = size;
           this.productInfo[0].productPrice = this.sizesPrice[idx];
           this.dialogVisible = false;
-          this.$router.replace({name: "productDetail_account", params: {product: this.productInfo[0], fixSize:this.size} })
+          if(this.buyOrsell != null) {
+            this.$router.replace({name: "productDetail_account", params: {product: this.productInfo[0], fixSize:this.size, buyOrsell:this.buyOrsell} })
+          }
       },    
 
       btnTab(btn){
         this.btnidx = btn;
       },
 
-      sellBtnClick() {
+      sellBtnClick(buyOrsell) {
+          this.buyOrsell = buyOrsell;
+
           if(this.size == 0){
               msgBoxNo("사이즈를 선택해주세요")
               this.dialogVisible = true;
           }else{
-              this.$router.replace({name: "productDetail_account", params: {product: this.productInfo[0], fixSize:this.size} })
-            //   this.$router.push({path: '/productDetail_account', query : {price:this.productInfo[0].productPrice, size:this.size}, params: {name: 'dog', age:4} })
+              this.$router.replace({name: "productDetail_account", params: {product: this.productInfo[0], fixSize:this.size, buyOrsell:this.buyOrsell} })
           } 
       }
   },
 
   data() {
     return {
+        buyOrsell : null,
         sizeidx : 100,
         size : 0,
         dialogVisible : false,

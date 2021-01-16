@@ -8,9 +8,9 @@
               <p>Best Validator 2020</p>            
               <img src="@/assets/resources/person.png" alt="">
             </div>
-            <p>2020년 12월 고객만족도 1위인 검수자<br>
-              현재 검수자의 등급은 
-              <span>Gold</span> 입니다.</p>            
+            <p>Certification NIKE<br> 
+            <p>상의,하의,신발</p>
+              <!-- <span>Gold</span> 입니다.</p>             -->
             <!-- <button>내용확인</button> -->
           </section>
 

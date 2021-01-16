@@ -76,6 +76,16 @@
     background-color: #167af9
 }
 
+.productAccount section:nth-child(1) .buttonWrap.buy .active:nth-child(1){
+    color:white;
+    /* background-color: #167af9 */
+    background-color: #404750;
+}
+.productAccount section:nth-child(1) .buttonWrap.buy .active:nth-child(2){
+    color:white;
+    background-color: #404750
+}
+
 .productAccount section:nth-child(1) button {
     width:50%;
     height: 40px;
@@ -152,4 +162,3 @@
     height: 50px;
     margin: 15px 10px 0px 10px;
 }
-
