@@ -210,6 +210,8 @@ export default {
     border-radius: 15px;
     margin: auto;
     box-sizing: border-box;
+    margin-top:20px;
+    margin-bottom:40px;
   }
 
   .profile .card_inspected {
