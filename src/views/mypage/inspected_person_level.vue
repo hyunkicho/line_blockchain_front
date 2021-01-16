@@ -188,7 +188,7 @@ export default {
   }
   .person_level_box {
     width: 85%;
-    height: 80%;
+    /* height: 80%; */
     margin: auto;
     background-color: white;
     border-radius: 20px;
@@ -280,6 +280,7 @@ export default {
 
   .person_cert_wrap {
     display:flex;
+    margin-top:7%;
   }
   .person_cert_wrap li:nth-child(1){
     text-align: left;
